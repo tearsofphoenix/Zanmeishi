@@ -17,7 +17,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    [[self view] setBackgroundColor: [UIColor whiteColor]];
+    
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: @"我"
+                                                       image: [UIImage imageNamed: @"VZTabMe"]
+                                               selectedImage: nil];
+    [self setTabBarItem: item];
+    [self setTitle: @"我"];
+
 }
  
 @end

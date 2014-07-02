@@ -20,16 +20,18 @@
 {
     [super viewDidLoad];
 
-    [[VZUserManager manager] loginUser: @"tearsofphoenix"
-                              password: @"xx"
-                              callback: (^(id result, NSError *error)
-                                         {
+//    [[VZUserManager manager] loginUser: @"tearsofphoenix"
+//                              password: @"veritasLXM"
+//                              callback: (^(id result, NSError *error)
+//                                         {
+//    
+//                                         })];
+    [[self view] setBackgroundColor: [UIColor whiteColor]];
+    [self setTitle: @"歌曲"];
     
-                                         })];
-    
-    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: @"歌曲"
-                                                       image: [UIImage imageNamed: @""]
-                                               selectedImage: [UIImage imageNamed: @""]];
+    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: [self title]
+                                                       image: [UIImage imageNamed: @"VZTabSongs"]
+                                               selectedImage: nil];
     [self setTabBarItem: item];
 }
 

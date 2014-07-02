@@ -8,6 +8,7 @@
 
 #import "VZRootViewController.h"
 #import "VZSongsViewController.h"
+#import "VZSearchViewController.h"
 #import "VZPreferencesViewController.h"
 
 @interface VZRootViewController ()
@@ -22,13 +23,7 @@
                            bundle: nibBundleOrNil];
     if (self)
     {
-        VZSongsViewController *songsViewController = [[VZSongsViewController alloc] init];
-        UINavigationController *snavController = [[UINavigationController alloc] initWithRootViewController: songsViewController];
-        
-        VZPreferencesViewController *preferencesViewController = [[VZPreferencesViewController alloc] init];
-        UINavigationController *pnavController = [[UINavigationController alloc] initWithRootViewController: preferencesViewController];
-        
-        [self setViewControllers: @[ snavController, pnavController]];
+
     }
     return self;
 }
@@ -36,7 +31,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    VZSongsViewController *songsViewController = [[VZSongsViewController alloc] init];
+    UINavigationController *snavController = [[UINavigationController alloc] initWithRootViewController: songsViewController];
+    
+    VZSearchViewController *searchViewController = [[VZSearchViewController alloc] init];
+    UINavigationController *searchNavController = [[UINavigationController alloc] initWithRootViewController: searchViewController];
+    
+    VZPreferencesViewController *preferencesViewController = [[VZPreferencesViewController alloc] init];
+    UINavigationController *pnavController = [[UINavigationController alloc] initWithRootViewController: preferencesViewController];
+    
+    [self setViewControllers: @[ snavController, searchNavController, pnavController]
+                    animated: YES];
+
 }
 
 @end
