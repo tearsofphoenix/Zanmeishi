@@ -19,6 +19,7 @@
 		925454C41963FE3B00286694 /* VZTabSearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 925454C21963FE3B00286694 /* VZTabSearch.png */; };
 		925454C51963FE3B00286694 /* VZTabSearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 925454C31963FE3B00286694 /* VZTabSearch@2x.png */; };
 		925454C81963FE6600286694 /* VZSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454C71963FE6600286694 /* VZSearchViewController.m */; };
+		925454CB1964015100286694 /* VZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454CA1964015100286694 /* VZBaseViewController.m */; };
 		929CB67E193EC4ED0016820F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67D193EC4ED0016820F /* Foundation.framework */; };
 		929CB680193EC4ED0016820F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67F193EC4ED0016820F /* CoreGraphics.framework */; };
 		929CB682193EC4ED0016820F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB681193EC4ED0016820F /* UIKit.framework */; };
@@ -60,6 +61,8 @@
 		925454C31963FE3B00286694 /* VZTabSearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VZTabSearch@2x.png"; sourceTree = "<group>"; };
 		925454C61963FE6600286694 /* VZSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZSearchViewController.h; sourceTree = "<group>"; };
 		925454C71963FE6600286694 /* VZSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSearchViewController.m; sourceTree = "<group>"; };
+		925454C91964015100286694 /* VZBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZBaseViewController.h; sourceTree = "<group>"; };
+		925454CA1964015100286694 /* VZBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZBaseViewController.m; sourceTree = "<group>"; };
 		929CB67A193EC4ED0016820F /* Zanmeishi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanmeishi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CB67D193EC4ED0016820F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		929CB67F193EC4ED0016820F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,6 +174,8 @@
 				929CB68D193EC4EE0016820F /* VZAppDelegate.m */,
 				925454A01963D0E300286694 /* VZRootViewController.h */,
 				925454A11963D0E300286694 /* VZRootViewController.m */,
+				925454C91964015100286694 /* VZBaseViewController.h */,
+				925454CA1964015100286694 /* VZBaseViewController.m */,
 				929CB692193EC4EF0016820F /* VZSongsViewController.h */,
 				929CB693193EC4EF0016820F /* VZSongsViewController.m */,
 				925454C61963FE6600286694 /* VZSearchViewController.h */,
@@ -322,6 +327,7 @@
 				929CB6D0193EC6ED0016820F /* AFURLRequestSerialization.m in Sources */,
 				929CB6CC193EC6ED0016820F /* AFHTTPSessionManager.m in Sources */,
 				925454B11963DE6200286694 /* VZKeys.m in Sources */,
+				925454CB1964015100286694 /* VZBaseViewController.m in Sources */,
 				929CB6CD193EC6ED0016820F /* AFNetworkReachabilityManager.m in Sources */,
 				929CB6D1193EC6ED0016820F /* AFURLResponseSerialization.m in Sources */,
 				929CB6D2193EC6ED0016820F /* AFURLSessionManager.m in Sources */,

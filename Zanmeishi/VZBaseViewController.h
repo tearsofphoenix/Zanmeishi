@@ -1,5 +1,5 @@
 //
-//  VZSearchViewController.h
+//  VZBaseViewController.h
 //  Zanmeishi
 //
 //  Created by Mac003 on 14-7-2.
@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VZBaseViewController.h"
 
-@interface VZSearchViewController : VZBaseViewController
+@interface VZBaseViewController : UIViewController
 
 @end

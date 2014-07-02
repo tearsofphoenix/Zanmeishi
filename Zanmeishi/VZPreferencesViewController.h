@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VZBaseViewController.h"
 
-@interface VZPreferencesViewController : UIViewController
+@interface VZPreferencesViewController : VZBaseViewController
 
 @end

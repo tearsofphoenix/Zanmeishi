@@ -8,7 +8,9 @@
 
 #import "VZSearchViewController.h"
 
-@interface VZSearchViewController ()
+@interface VZSearchViewController ()<UISearchBarDelegate>
+
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 @end
 
@@ -33,7 +35,42 @@
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: [self title]
                                                        image: [UIImage imageNamed: @"VZTabSearch"]
                                                selectedImage: nil];
-    [self setTabBarItem: item];    
+    [self setTabBarItem: item];
+    
+    CGRect bounds = [[self view] bounds];
+    CGRect rect = CGRectMake(0, 0, bounds.size.width, 30);
+    
+     _searchBar = [[UISearchBar alloc] initWithFrame: rect];
+    [_searchBar setDelegate: self];
+    [_searchBar setPlaceholder: @"歌曲、歌手、专辑、@用户"];
+    
+    [[self view] addSubview: _searchBar];
+    
+    
+}
+
+#pragma mark - search bar delegate
+
+- (void)searchBarTextDidBeginEditing: (UISearchBar *)searchBar
+{
+    [_searchBar setShowsCancelButton: YES];
+}
+
+- (void)searchBar: (UISearchBar *)searchBar
+    textDidChange: (NSString *)searchText
+{
+    
+}
+
+- (void)searchBarSearchButtonClicked: (UISearchBar *)searchBar
+{
+    
+}
+
+- (void)searchBarCancelButtonClicked: (UISearchBar *)searchBar
+{
+    [_searchBar resignFirstResponder];
+    [_searchBar setShowsCancelButton: NO];
 }
 
 @end
