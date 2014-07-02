@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VZSecondViewController : UIViewController
+@interface VZPreferencesViewController : UIViewController
 
 @end

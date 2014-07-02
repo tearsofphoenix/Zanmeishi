@@ -7,12 +7,19 @@
 //
 
 #import "VZAppDelegate.h"
+#import "VZRootViewController.h"
 
 @implementation VZAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)          application: (UIApplication *)application
+didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    _window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+    
+    VZRootViewController *rootViewController = [[VZRootViewController alloc] init];
+    [_window setRootViewController: rootViewController];
+    
+    [_window makeKeyAndVisible];
     return YES;
 }
 							

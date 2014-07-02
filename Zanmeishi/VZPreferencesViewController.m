@@ -6,24 +6,18 @@
 //  Copyright (c) 2014年 Mac003. All rights reserved.
 //
 
-#import "VZSecondViewController.h"
+#import "VZPreferencesViewController.h"
 
-@interface VZSecondViewController ()
+@interface VZPreferencesViewController ()
 
 @end
 
-@implementation VZSecondViewController
+@implementation VZPreferencesViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+ 
 @end

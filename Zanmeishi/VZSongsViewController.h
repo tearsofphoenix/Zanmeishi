@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VZFirstViewController : UIViewController
+@interface VZSongsViewController : UIViewController
 
 @end

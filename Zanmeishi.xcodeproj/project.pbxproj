@@ -7,34 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		925454A21963D0E300286694 /* VZRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454A11963D0E300286694 /* VZRootViewController.m */; };
+		925454A51963D33E00286694 /* VZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454A41963D33E00286694 /* VZURLManager.m */; };
+		925454A81963D40B00286694 /* VZUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454A71963D40B00286694 /* VZUserManager.m */; };
+		925454B11963DE6200286694 /* VZKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454B01963DE6200286694 /* VZKeys.m */; };
+		925454B51963DF7600286694 /* VZViewService.m in Sources */ = {isa = PBXBuildFile; fileRef = 925454B41963DF7600286694 /* VZViewService.m */; };
 		929CB67E193EC4ED0016820F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67D193EC4ED0016820F /* Foundation.framework */; };
 		929CB680193EC4ED0016820F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67F193EC4ED0016820F /* CoreGraphics.framework */; };
 		929CB682193EC4ED0016820F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB681193EC4ED0016820F /* UIKit.framework */; };
 		929CB688193EC4EE0016820F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929CB686193EC4EE0016820F /* InfoPlist.strings */; };
 		929CB68A193EC4EE0016820F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB689193EC4EE0016820F /* main.m */; };
 		929CB68E193EC4EE0016820F /* VZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB68D193EC4EE0016820F /* VZAppDelegate.m */; };
-		929CB691193EC4EE0016820F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929CB68F193EC4EE0016820F /* Main.storyboard */; };
-		929CB694193EC4EF0016820F /* VZFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB693193EC4EF0016820F /* VZFirstViewController.m */; };
-		929CB697193EC4EF0016820F /* VZSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB696193EC4EF0016820F /* VZSecondViewController.m */; };
+		929CB694193EC4EF0016820F /* VZSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB693193EC4EF0016820F /* VZSongsViewController.m */; };
+		929CB697193EC4EF0016820F /* VZPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB696193EC4EF0016820F /* VZPreferencesViewController.m */; };
 		929CB699193EC4EF0016820F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929CB698193EC4EF0016820F /* Images.xcassets */; };
-		929CB6A0193EC4EF0016820F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB69F193EC4EF0016820F /* XCTest.framework */; };
-		929CB6A1193EC4EF0016820F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67D193EC4ED0016820F /* Foundation.framework */; };
-		929CB6A2193EC4EF0016820F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB681193EC4ED0016820F /* UIKit.framework */; };
-		929CB6AA193EC4EF0016820F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 929CB6A8193EC4EF0016820F /* InfoPlist.strings */; };
-		929CB6AC193EC4EF0016820F /* ZanmeishiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6AB193EC4EF0016820F /* ZanmeishiTests.m */; };
+		929CB6CA193EC6ED0016820F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6B8193EC6ED0016820F /* AFHTTPRequestOperation.m */; };
+		929CB6CB193EC6ED0016820F /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6BA193EC6ED0016820F /* AFHTTPRequestOperationManager.m */; };
+		929CB6CC193EC6ED0016820F /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6BC193EC6ED0016820F /* AFHTTPSessionManager.m */; };
+		929CB6CD193EC6ED0016820F /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6BF193EC6ED0016820F /* AFNetworkReachabilityManager.m */; };
+		929CB6CE193EC6ED0016820F /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6C1193EC6ED0016820F /* AFSecurityPolicy.m */; };
+		929CB6CF193EC6ED0016820F /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6C3193EC6ED0016820F /* AFURLConnectionOperation.m */; };
+		929CB6D0193EC6ED0016820F /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6C5193EC6ED0016820F /* AFURLRequestSerialization.m */; };
+		929CB6D1193EC6ED0016820F /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6C7193EC6ED0016820F /* AFURLResponseSerialization.m */; };
+		929CB6D2193EC6ED0016820F /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 929CB6C9193EC6ED0016820F /* AFURLSessionManager.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		929CB6A3193EC4EF0016820F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 929CB672193EC4ED0016820F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 929CB679193EC4ED0016820F;
-			remoteInfo = Zanmeishi;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		925454A01963D0E300286694 /* VZRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZRootViewController.h; sourceTree = "<group>"; };
+		925454A11963D0E300286694 /* VZRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZRootViewController.m; sourceTree = "<group>"; };
+		925454A31963D33E00286694 /* VZURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZURLManager.h; sourceTree = "<group>"; };
+		925454A41963D33E00286694 /* VZURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZURLManager.m; sourceTree = "<group>"; };
+		925454A61963D40B00286694 /* VZUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZUserManager.h; sourceTree = "<group>"; };
+		925454A71963D40B00286694 /* VZUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZUserManager.m; sourceTree = "<group>"; };
+		925454A91963DC1100286694 /* VZBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZBase.h; sourceTree = "<group>"; };
+		925454AC1963DC4500286694 /* VZHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZHeaders.h; sourceTree = "<group>"; };
+		925454AF1963DE6200286694 /* VZKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZKeys.h; sourceTree = "<group>"; };
+		925454B01963DE6200286694 /* VZKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZKeys.m; sourceTree = "<group>"; };
+		925454B31963DF7600286694 /* VZViewService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewService.h; sourceTree = "<group>"; };
+		925454B41963DF7600286694 /* VZViewService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewService.m; sourceTree = "<group>"; };
 		929CB67A193EC4ED0016820F /* Zanmeishi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zanmeishi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CB67D193EC4ED0016820F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		929CB67F193EC4ED0016820F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,17 +55,31 @@
 		929CB68B193EC4EE0016820F /* Zanmeishi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Zanmeishi-Prefix.pch"; sourceTree = "<group>"; };
 		929CB68C193EC4EE0016820F /* VZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZAppDelegate.h; sourceTree = "<group>"; };
 		929CB68D193EC4EE0016820F /* VZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZAppDelegate.m; sourceTree = "<group>"; };
-		929CB690193EC4EE0016820F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		929CB692193EC4EF0016820F /* VZFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZFirstViewController.h; sourceTree = "<group>"; };
-		929CB693193EC4EF0016820F /* VZFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZFirstViewController.m; sourceTree = "<group>"; };
-		929CB695193EC4EF0016820F /* VZSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZSecondViewController.h; sourceTree = "<group>"; };
-		929CB696193EC4EF0016820F /* VZSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZSecondViewController.m; sourceTree = "<group>"; };
+		929CB692193EC4EF0016820F /* VZSongsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZSongsViewController.h; sourceTree = "<group>"; };
+		929CB693193EC4EF0016820F /* VZSongsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZSongsViewController.m; sourceTree = "<group>"; };
+		929CB695193EC4EF0016820F /* VZPreferencesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZPreferencesViewController.h; sourceTree = "<group>"; };
+		929CB696193EC4EF0016820F /* VZPreferencesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZPreferencesViewController.m; sourceTree = "<group>"; };
 		929CB698193EC4EF0016820F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		929CB69E193EC4EF0016820F /* ZanmeishiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZanmeishiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		929CB69F193EC4EF0016820F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		929CB6A7193EC4EF0016820F /* ZanmeishiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZanmeishiTests-Info.plist"; sourceTree = "<group>"; };
-		929CB6A9193EC4EF0016820F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		929CB6AB193EC4EF0016820F /* ZanmeishiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZanmeishiTests.m; sourceTree = "<group>"; };
+		929CB6B7193EC6ED0016820F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		929CB6B8193EC6ED0016820F /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		929CB6B9193EC6ED0016820F /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		929CB6BA193EC6ED0016820F /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		929CB6BB193EC6ED0016820F /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		929CB6BC193EC6ED0016820F /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		929CB6BD193EC6ED0016820F /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		929CB6BE193EC6ED0016820F /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		929CB6BF193EC6ED0016820F /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		929CB6C0193EC6ED0016820F /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		929CB6C1193EC6ED0016820F /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		929CB6C2193EC6ED0016820F /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		929CB6C3193EC6ED0016820F /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		929CB6C4193EC6ED0016820F /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		929CB6C5193EC6ED0016820F /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		929CB6C6193EC6ED0016820F /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		929CB6C7193EC6ED0016820F /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		929CB6C8193EC6ED0016820F /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		929CB6C9193EC6ED0016820F /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,24 +93,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		929CB69B193EC4EF0016820F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				929CB6A0193EC4EF0016820F /* XCTest.framework in Frameworks */,
-				929CB6A2193EC4EF0016820F /* UIKit.framework in Frameworks */,
-				929CB6A1193EC4EF0016820F /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		925454B21963DEE500286694 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				925454A91963DC1100286694 /* VZBase.h */,
+				925454AF1963DE6200286694 /* VZKeys.h */,
+				925454B01963DE6200286694 /* VZKeys.m */,
+				925454AC1963DC4500286694 /* VZHeaders.h */,
+			);
+			name = Global;
+			sourceTree = "<group>";
+		};
 		929CB671193EC4ED0016820F = {
 			isa = PBXGroup;
 			children = (
 				929CB683193EC4ED0016820F /* Zanmeishi */,
-				929CB6A5193EC4EF0016820F /* ZanmeishiTests */,
 				929CB67C193EC4ED0016820F /* Frameworks */,
 				929CB67B193EC4ED0016820F /* Products */,
 			);
@@ -96,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				929CB67A193EC4ED0016820F /* Zanmeishi.app */,
-				929CB69E193EC4EF0016820F /* ZanmeishiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,13 +138,22 @@
 		929CB683193EC4ED0016820F /* Zanmeishi */ = {
 			isa = PBXGroup;
 			children = (
+				929CB6B5193EC6ED0016820F /* Library */,
 				929CB68C193EC4EE0016820F /* VZAppDelegate.h */,
 				929CB68D193EC4EE0016820F /* VZAppDelegate.m */,
-				929CB68F193EC4EE0016820F /* Main.storyboard */,
-				929CB692193EC4EF0016820F /* VZFirstViewController.h */,
-				929CB693193EC4EF0016820F /* VZFirstViewController.m */,
-				929CB695193EC4EF0016820F /* VZSecondViewController.h */,
-				929CB696193EC4EF0016820F /* VZSecondViewController.m */,
+				925454A01963D0E300286694 /* VZRootViewController.h */,
+				925454A11963D0E300286694 /* VZRootViewController.m */,
+				929CB692193EC4EF0016820F /* VZSongsViewController.h */,
+				929CB693193EC4EF0016820F /* VZSongsViewController.m */,
+				929CB695193EC4EF0016820F /* VZPreferencesViewController.h */,
+				929CB696193EC4EF0016820F /* VZPreferencesViewController.m */,
+				925454A31963D33E00286694 /* VZURLManager.h */,
+				925454A41963D33E00286694 /* VZURLManager.m */,
+				925454A61963D40B00286694 /* VZUserManager.h */,
+				925454A71963D40B00286694 /* VZUserManager.m */,
+				925454B31963DF7600286694 /* VZViewService.h */,
+				925454B41963DF7600286694 /* VZViewService.m */,
+				925454B21963DEE500286694 /* Global */,
 				929CB698193EC4EF0016820F /* Images.xcassets */,
 				929CB684193EC4ED0016820F /* Supporting Files */,
 			);
@@ -139,22 +171,38 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		929CB6A5193EC4EF0016820F /* ZanmeishiTests */ = {
+		929CB6B5193EC6ED0016820F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				929CB6AB193EC4EF0016820F /* ZanmeishiTests.m */,
-				929CB6A6193EC4EF0016820F /* Supporting Files */,
+				929CB6B6193EC6ED0016820F /* AFNetworking */,
 			);
-			path = ZanmeishiTests;
+			path = Library;
 			sourceTree = "<group>";
 		};
-		929CB6A6193EC4EF0016820F /* Supporting Files */ = {
+		929CB6B6193EC6ED0016820F /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				929CB6A7193EC4EF0016820F /* ZanmeishiTests-Info.plist */,
-				929CB6A8193EC4EF0016820F /* InfoPlist.strings */,
+				929CB6B7193EC6ED0016820F /* AFHTTPRequestOperation.h */,
+				929CB6B8193EC6ED0016820F /* AFHTTPRequestOperation.m */,
+				929CB6B9193EC6ED0016820F /* AFHTTPRequestOperationManager.h */,
+				929CB6BA193EC6ED0016820F /* AFHTTPRequestOperationManager.m */,
+				929CB6BB193EC6ED0016820F /* AFHTTPSessionManager.h */,
+				929CB6BC193EC6ED0016820F /* AFHTTPSessionManager.m */,
+				929CB6BD193EC6ED0016820F /* AFNetworking.h */,
+				929CB6BE193EC6ED0016820F /* AFNetworkReachabilityManager.h */,
+				929CB6BF193EC6ED0016820F /* AFNetworkReachabilityManager.m */,
+				929CB6C0193EC6ED0016820F /* AFSecurityPolicy.h */,
+				929CB6C1193EC6ED0016820F /* AFSecurityPolicy.m */,
+				929CB6C2193EC6ED0016820F /* AFURLConnectionOperation.h */,
+				929CB6C3193EC6ED0016820F /* AFURLConnectionOperation.m */,
+				929CB6C4193EC6ED0016820F /* AFURLRequestSerialization.h */,
+				929CB6C5193EC6ED0016820F /* AFURLRequestSerialization.m */,
+				929CB6C6193EC6ED0016820F /* AFURLResponseSerialization.h */,
+				929CB6C7193EC6ED0016820F /* AFURLResponseSerialization.m */,
+				929CB6C8193EC6ED0016820F /* AFURLSessionManager.h */,
+				929CB6C9193EC6ED0016820F /* AFURLSessionManager.m */,
 			);
-			name = "Supporting Files";
+			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,24 +225,6 @@
 			productReference = 929CB67A193EC4ED0016820F /* Zanmeishi.app */;
 			productType = "com.apple.product-type.application";
 		};
-		929CB69D193EC4EF0016820F /* ZanmeishiTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 929CB6B2193EC4EF0016820F /* Build configuration list for PBXNativeTarget "ZanmeishiTests" */;
-			buildPhases = (
-				929CB69A193EC4EF0016820F /* Sources */,
-				929CB69B193EC4EF0016820F /* Frameworks */,
-				929CB69C193EC4EF0016820F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				929CB6A4193EC4EF0016820F /* PBXTargetDependency */,
-			);
-			name = ZanmeishiTests;
-			productName = ZanmeishiTests;
-			productReference = 929CB69E193EC4EF0016820F /* ZanmeishiTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,11 +234,6 @@
 				CLASSPREFIX = VZ;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Mac003;
-				TargetAttributes = {
-					929CB69D193EC4EF0016820F = {
-						TestTargetID = 929CB679193EC4ED0016820F;
-					};
-				};
 			};
 			buildConfigurationList = 929CB675193EC4ED0016820F /* Build configuration list for PBXProject "Zanmeishi" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -224,7 +249,6 @@
 			projectRoot = "";
 			targets = (
 				929CB679193EC4ED0016820F /* Zanmeishi */,
-				929CB69D193EC4EF0016820F /* ZanmeishiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,15 +260,6 @@
 			files = (
 				929CB699193EC4EF0016820F /* Images.xcassets in Resources */,
 				929CB688193EC4EE0016820F /* InfoPlist.strings in Resources */,
-				929CB691193EC4EE0016820F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		929CB69C193EC4EF0016820F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				929CB6AA193EC4EF0016820F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,51 +271,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				929CB68E193EC4EE0016820F /* VZAppDelegate.m in Sources */,
-				929CB694193EC4EF0016820F /* VZFirstViewController.m in Sources */,
-				929CB697193EC4EF0016820F /* VZSecondViewController.m in Sources */,
+				929CB6CE193EC6ED0016820F /* AFSecurityPolicy.m in Sources */,
+				929CB694193EC4EF0016820F /* VZSongsViewController.m in Sources */,
+				925454A51963D33E00286694 /* VZURLManager.m in Sources */,
+				925454B51963DF7600286694 /* VZViewService.m in Sources */,
+				925454A81963D40B00286694 /* VZUserManager.m in Sources */,
+				929CB6CB193EC6ED0016820F /* AFHTTPRequestOperationManager.m in Sources */,
+				929CB6CF193EC6ED0016820F /* AFURLConnectionOperation.m in Sources */,
+				929CB6CA193EC6ED0016820F /* AFHTTPRequestOperation.m in Sources */,
+				925454A21963D0E300286694 /* VZRootViewController.m in Sources */,
+				929CB697193EC4EF0016820F /* VZPreferencesViewController.m in Sources */,
+				929CB6D0193EC6ED0016820F /* AFURLRequestSerialization.m in Sources */,
+				929CB6CC193EC6ED0016820F /* AFHTTPSessionManager.m in Sources */,
+				925454B11963DE6200286694 /* VZKeys.m in Sources */,
+				929CB6CD193EC6ED0016820F /* AFNetworkReachabilityManager.m in Sources */,
+				929CB6D1193EC6ED0016820F /* AFURLResponseSerialization.m in Sources */,
+				929CB6D2193EC6ED0016820F /* AFURLSessionManager.m in Sources */,
 				929CB68A193EC4EE0016820F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		929CB69A193EC4EF0016820F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				929CB6AC193EC4EF0016820F /* ZanmeishiTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		929CB6A4193EC4EF0016820F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 929CB679193EC4ED0016820F /* Zanmeishi */;
-			targetProxy = 929CB6A3193EC4EF0016820F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		929CB686193EC4EE0016820F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				929CB687193EC4EE0016820F /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		929CB68F193EC4EE0016820F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				929CB690193EC4EE0016820F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		929CB6A8193EC4EF0016820F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				929CB6A9193EC4EF0016820F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -404,46 +401,6 @@
 			};
 			name = Release;
 		};
-		929CB6B3193EC4EF0016820F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Zanmeishi.app/Zanmeishi";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Zanmeishi/Zanmeishi-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "ZanmeishiTests/ZanmeishiTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		929CB6B4193EC4EF0016820F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Zanmeishi.app/Zanmeishi";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Zanmeishi/Zanmeishi-Prefix.pch";
-				INFOPLIST_FILE = "ZanmeishiTests/ZanmeishiTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -463,14 +420,7 @@
 				929CB6B1193EC4EF0016820F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		929CB6B2193EC4EF0016820F /* Build configuration list for PBXNativeTarget "ZanmeishiTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				929CB6B3193EC4EF0016820F /* Debug */,
-				929CB6B4193EC4EF0016820F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
