@@ -96,6 +96,9 @@
                                                    NSString *str = [[NSString alloc] initWithData: result
                                                                                          encoding: NSUTF8StringEncoding];
                                                    NSLog(@"%@",  str);
+                                                   MXMLDocument *document = [[MXMLDocument alloc] initWithData: result
+                                                                                                   contentType: MXMLContentTypeHTML];
+                                                   [document nodesWithXPath: @""];
                                                    
                                                    [_operationsOfGET removeObject: operation];
 //                                                   

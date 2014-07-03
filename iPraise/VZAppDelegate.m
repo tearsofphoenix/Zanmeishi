@@ -8,12 +8,14 @@
 
 #import "VZAppDelegate.h"
 #import "VZRootViewController.h"
+#import "VZHeaders.h"
 
 @implementation VZAppDelegate
 
 - (BOOL)          application: (UIApplication *)application
 didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
 {
+        
     _window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
     [_window makeKeyAndVisible];
     

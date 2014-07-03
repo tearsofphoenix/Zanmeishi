@@ -12,3 +12,6 @@
 #import "AFNetworking.h"
 
 #import "NSDictionary+Extensions.h"
+
+#import "MXMLDocument.h"
+#import "MXMLNode.h"
