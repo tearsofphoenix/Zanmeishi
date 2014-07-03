@@ -7,6 +7,8 @@
 //
 
 #import "VZBaseViewController.h"
+#import "VZHeaders.h"
+#import "UIView+Extensions.h"
 
 @interface VZBaseViewController ()
 
@@ -42,6 +44,7 @@
     {
         [self setAutomaticallyAdjustsScrollViewInsets: NO];
     }
+    
 }
 
 @end

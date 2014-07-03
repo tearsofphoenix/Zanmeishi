@@ -8,6 +8,7 @@
 
 #import "VZDataService.h"
 #import "VZViewService.h"
+#import "VZFileCacheManager.h"
 
 @interface VZDataService ()
 
@@ -95,13 +96,13 @@
                                                {
                                                    NSString *str = [[NSString alloc] initWithData: result
                                                                                          encoding: NSUTF8StringEncoding];
-//                                                   NSLog(@"%@",  str);
+                                                   //                                                   NSLog(@"%@",  str);
                                                    
                                                    [_operationsOfGET removeObject: operation];
                                                    
                                                    if (callback)
                                                    {
-                                                       callback(str, nil);
+                                                       callback(@[URLString, str], nil);
                                                    }
                                                })
                                      failure: (^(AFHTTPRequestOperation *operation, NSError *error)
@@ -136,33 +137,49 @@
                      type: (NSString *)type
                  callback: (VZCallback)callback
 {
-    [self _get: [VZURLManager searchURL]
-    parameters:(@{
-                  @"keyword": keyword,
-                  @"type" : type
-                  })
-      callback: (^(NSString *result, NSError *error)
-                 {
-                     if (result && !error)
+    NSDictionary *args = (@{
+                            @"keyword": keyword,
+                            @"type" : type
+                            });
+    
+    NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
+    NSData *cahcedData = [[VZFileCacheManager manager] dataForKey: URLString];
+    if (cahcedData)
+    {
+        NSLog(@"using cache for url: %@", URLString);
+        if (callback)
+        {
+            callback([cahcedData plistObject], nil);
+        }
+    }else
+    {
+        
+        [self _get: [VZURLManager searchURL]
+        parameters: args
+          callback: (^(NSArray *result, NSError *error)
                      {
-                         [self _parseSearchResult: result
-                                         callback: callback];
-                     }else
-                     {
-                         if (callback)
+                         if (result && !error)
                          {
-                             callback(result, error);
+                             [self _parseSearchResult: result
+                                             callback: callback];
+                         }else
+                         {
+                             if (callback)
+                             {
+                                 callback(result, error);
+                             }
                          }
-                     }
-                 })];
+                     })];
+    }
 }
 
-- (void)_parseSearchResult: (NSString *)str
+- (void)_parseSearchResult: (NSArray *)args
                   callback: (VZCallback)callback
 {
+    NSString *originURL = args[0];
     NSMutableArray *result = nil;
     
-    MXMLDocument *document = [[MXMLDocument alloc] initWithString: str
+    MXMLDocument *document = [[MXMLDocument alloc] initWithString: args[1]
                                                       contentType: MXMLContentTypeHTML];
     
     NSArray *nodes = [document nodesWithXPath: @"//div[@class='songs mt5']/table/tr"];
@@ -220,9 +237,11 @@
                 
                 [result addObject: infoLooper];
             }
-            //                break;
         }
         
+        //cache data
+        [[VZFileCacheManager manager] cacheData: [result plistData]
+                                         forKey: originURL];
     }
     
     if (callback)

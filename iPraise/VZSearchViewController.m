@@ -10,6 +10,7 @@
 #import "VZDataService.h"
 #import "VZViewService.h"
 #import "VZHeaders.h"
+#import "VZPlayerViewController.h"
 
 static NSArray *gsEntryValues = nil;
 static NSArray *gsEntryNames = nil;
@@ -126,10 +127,16 @@ static NSArray *gsEntryNames = nil;
     [_searchBar resignFirstResponder];
     [_searchBar setShowsCancelButton: NO];
 
+    [MBProgressHUD showHUDAddedTo: [self view]
+                         animated: YES];
+    
     [[VZDataService manager] searchWithKeyword: [_searchBar text]
                                           type: gsEntryValues[_selectedIndex]
                                       callback: (^(id result, NSError *error)
                                                  {
+                                                     [MBProgressHUD hideHUDForView: [self view]
+                                                                          animated: YES];
+                                                     
                                                      if (error)
                                                      {
                                                          [[VZViewService service] alertMessage: [error localizedDescription]];
@@ -185,6 +192,15 @@ static NSArray *gsEntryNames = nil;
 heightForRowAtIndexPath: (NSIndexPath *)indexPath
 {
     return 60;
+}
+
+- (void)      tableView: (UITableView *)tableView
+didSelectRowAtIndexPath: (NSIndexPath *)indexPath
+{
+    VZPlayerViewController *playerViewController = [[VZPlayerViewController alloc] init];
+    
+    [[self navigationController] pushViewController: playerViewController
+                                           animated: YES];
 }
 
 @end

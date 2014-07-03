@@ -9,7 +9,15 @@
 /* Begin PBXBuildFile section */
 		60D265861965A45300B8BD62 /* libiOSHierarchyViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */; };
 		60D2658F1965AC7800B8BD62 /* libfppopover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2658C1965AC6B00B8BD62 /* libfppopover.a */; };
-		929A58AA196523B4007F2327 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */; };
+		60D265941965B78300B8BD62 /* VZPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265931965B78300B8BD62 /* VZPlayerViewController.m */; };
+		60D2659D196612BC00B8BD62 /* VZFileCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D2659C196612BC00B8BD62 /* VZFileCacheManager.m */; };
+		60D265B719661A6F00B8BD62 /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265A919661A6F00B8BD62 /* NSData+Extensions.m */; };
+		60D265B819661A6F00B8BD62 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265AB19661A6F00B8BD62 /* NSDictionary+Extensions.m */; };
+		60D265B919661A6F00B8BD62 /* NSObject+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265AD19661A6F00B8BD62 /* NSObject+Extensions.m */; };
+		60D265BA19661A6F00B8BD62 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265AF19661A6F00B8BD62 /* NSString+Extensions.m */; };
+		60D265BB19661A6F00B8BD62 /* UIColor+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265B119661A6F00B8BD62 /* UIColor+Extensions.m */; };
+		60D265BC19661A6F00B8BD62 /* UIView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265B319661A6F00B8BD62 /* UIView+Extensions.m */; };
+		60D265BD19661A6F00B8BD62 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265B619661A6F00B8BD62 /* MBProgressHUD.m */; };
 		929A58B11965321E007F2327 /* MXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AD1965321E007F2327 /* MXMLDocument.m */; };
 		929A58B21965321E007F2327 /* MXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AF1965321E007F2327 /* MXMLNode.m */; };
 		929A58B419653286007F2327 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 929A58B319653286007F2327 /* libxml2.dylib */; };
@@ -29,7 +37,6 @@
 		929A58DB19654145007F2327 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752601964FDC000F831F3 /* AFURLRequestSerialization.m */; };
 		929A58DC19654145007F2327 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752621964FDC000F831F3 /* AFURLResponseSerialization.m */; };
 		929A58DD19654145007F2327 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752641964FDC000F831F3 /* AFURLSessionManager.m */; };
-		929A58DE19654145007F2327 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */; };
 		929A58DF19654145007F2327 /* VZKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752721964FDDB00F831F3 /* VZKeys.m */; };
 		929A58E019654145007F2327 /* VZBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752271964FD8B00F831F3 /* VZBaseViewController.m */; };
 		929A58E119654145007F2327 /* VZPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7522C1964FD8B00F831F3 /* VZPreferencesViewController.m */; };
@@ -117,8 +124,24 @@
 /* Begin PBXFileReference section */
 		60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSHierarchyViewer.xcodeproj; path = "iOS-Hierarchy-Viewer/iOSHierarchyViewer.xcodeproj"; sourceTree = "<group>"; };
 		60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FPPopoverDemo.xcodeproj; path = Popover/FPPopoverDemo.xcodeproj; sourceTree = "<group>"; };
-		929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
-		929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
+		60D265921965B78300B8BD62 /* VZPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPlayerViewController.h; sourceTree = "<group>"; };
+		60D265931965B78300B8BD62 /* VZPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZPlayerViewController.m; sourceTree = "<group>"; };
+		60D2659B196612BC00B8BD62 /* VZFileCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZFileCacheManager.h; sourceTree = "<group>"; };
+		60D2659C196612BC00B8BD62 /* VZFileCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZFileCacheManager.m; sourceTree = "<group>"; };
+		60D265A819661A6F00B8BD62 /* NSData+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
+		60D265A919661A6F00B8BD62 /* NSData+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
+		60D265AA19661A6F00B8BD62 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		60D265AB19661A6F00B8BD62 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
+		60D265AC19661A6F00B8BD62 /* NSObject+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extensions.h"; sourceTree = "<group>"; };
+		60D265AD19661A6F00B8BD62 /* NSObject+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extensions.m"; sourceTree = "<group>"; };
+		60D265AE19661A6F00B8BD62 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
+		60D265AF19661A6F00B8BD62 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
+		60D265B019661A6F00B8BD62 /* UIColor+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extensions.h"; sourceTree = "<group>"; };
+		60D265B119661A6F00B8BD62 /* UIColor+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extensions.m"; sourceTree = "<group>"; };
+		60D265B219661A6F00B8BD62 /* UIView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extensions.h"; sourceTree = "<group>"; };
+		60D265B319661A6F00B8BD62 /* UIView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extensions.m"; sourceTree = "<group>"; };
+		60D265B519661A6F00B8BD62 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		60D265B619661A6F00B8BD62 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		929A58AC1965321E007F2327 /* MXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMLDocument.h; sourceTree = "<group>"; };
 		929A58AD1965321E007F2327 /* MXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXMLDocument.m; sourceTree = "<group>"; };
 		929A58AE1965321E007F2327 /* MXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMLNode.h; sourceTree = "<group>"; };
@@ -243,6 +266,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		60D265A719661A6F00B8BD62 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				60D265A819661A6F00B8BD62 /* NSData+Extensions.h */,
+				60D265A919661A6F00B8BD62 /* NSData+Extensions.m */,
+				60D265AA19661A6F00B8BD62 /* NSDictionary+Extensions.h */,
+				60D265AB19661A6F00B8BD62 /* NSDictionary+Extensions.m */,
+				60D265AC19661A6F00B8BD62 /* NSObject+Extensions.h */,
+				60D265AD19661A6F00B8BD62 /* NSObject+Extensions.m */,
+				60D265AE19661A6F00B8BD62 /* NSString+Extensions.h */,
+				60D265AF19661A6F00B8BD62 /* NSString+Extensions.m */,
+				60D265B019661A6F00B8BD62 /* UIColor+Extensions.h */,
+				60D265B119661A6F00B8BD62 /* UIColor+Extensions.m */,
+				60D265B219661A6F00B8BD62 /* UIView+Extensions.h */,
+				60D265B319661A6F00B8BD62 /* UIView+Extensions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		60D265B419661A6F00B8BD62 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				60D265B519661A6F00B8BD62 /* MBProgressHUD.h */,
+				60D265B619661A6F00B8BD62 /* MBProgressHUD.m */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		929A58AB1965321E007F2327 /* XML */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,10 +370,14 @@
 				92E7522E1964FD8B00F831F3 /* VZRootViewController.m */,
 				92E7522F1964FD8B00F831F3 /* VZSearchViewController.h */,
 				92E752301964FD8B00F831F3 /* VZSearchViewController.m */,
+				60D265921965B78300B8BD62 /* VZPlayerViewController.h */,
+				60D265931965B78300B8BD62 /* VZPlayerViewController.m */,
 				92E752311964FD8B00F831F3 /* VZSongsViewController.h */,
 				92E752321964FD8B00F831F3 /* VZSongsViewController.m */,
 				92E752331964FD8B00F831F3 /* VZURLManager.h */,
 				92E752341964FD8B00F831F3 /* VZURLManager.m */,
+				60D2659B196612BC00B8BD62 /* VZFileCacheManager.h */,
+				60D2659C196612BC00B8BD62 /* VZFileCacheManager.m */,
 				92E752351964FD8B00F831F3 /* VZDataService.h */,
 				92E752361964FD8B00F831F3 /* VZDataService.m */,
 				92E752371964FD8B00F831F3 /* VZViewService.h */,
@@ -390,10 +445,10 @@
 			children = (
 				60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */,
 				60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */,
+				60D265A719661A6F00B8BD62 /* Categories */,
+				60D265B419661A6F00B8BD62 /* Loading */,
 				929A58AB1965321E007F2327 /* XML */,
 				92E752511964FDC000F831F3 /* AFNetworking */,
-				929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */,
-				929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -575,7 +630,10 @@
 				92E752011964FD0700F831F3 /* VZAppDelegate.m in Sources */,
 				92E752661964FDC000F831F3 /* AFHTTPRequestOperationManager.m in Sources */,
 				92E752411964FD8B00F831F3 /* VZViewService.m in Sources */,
+				60D265B919661A6F00B8BD62 /* NSObject+Extensions.m in Sources */,
+				60D265BA19661A6F00B8BD62 /* NSString+Extensions.m in Sources */,
 				92E7526A1964FDC000F831F3 /* AFURLConnectionOperation.m in Sources */,
+				60D265941965B78300B8BD62 /* VZPlayerViewController.m in Sources */,
 				92E7523E1964FD8B00F831F3 /* VZSongsViewController.m in Sources */,
 				92E7526B1964FDC000F831F3 /* AFURLRequestSerialization.m in Sources */,
 				92E752671964FDC000F831F3 /* AFHTTPSessionManager.m in Sources */,
@@ -583,15 +641,20 @@
 				92E7523C1964FD8B00F831F3 /* VZRootViewController.m in Sources */,
 				92E752691964FDC000F831F3 /* AFSecurityPolicy.m in Sources */,
 				92E752731964FDDB00F831F3 /* VZKeys.m in Sources */,
+				60D265BB19661A6F00B8BD62 /* UIColor+Extensions.m in Sources */,
 				92E751FD1964FD0700F831F3 /* main.m in Sources */,
+				60D2659D196612BC00B8BD62 /* VZFileCacheManager.m in Sources */,
 				92E752681964FDC000F831F3 /* AFNetworkReachabilityManager.m in Sources */,
+				60D265B819661A6F00B8BD62 /* NSDictionary+Extensions.m in Sources */,
+				60D265BD19661A6F00B8BD62 /* MBProgressHUD.m in Sources */,
+				60D265BC19661A6F00B8BD62 /* UIView+Extensions.m in Sources */,
 				92E7526D1964FDC000F831F3 /* AFURLSessionManager.m in Sources */,
+				60D265B719661A6F00B8BD62 /* NSData+Extensions.m in Sources */,
 				92E7523D1964FD8B00F831F3 /* VZSearchViewController.m in Sources */,
 				92E752401964FD8B00F831F3 /* VZDataService.m in Sources */,
 				92E7523F1964FD8B00F831F3 /* VZURLManager.m in Sources */,
 				92E7526C1964FDC000F831F3 /* AFURLResponseSerialization.m in Sources */,
 				92E7523B1964FD8B00F831F3 /* VZPreferencesViewController.m in Sources */,
-				929A58AA196523B4007F2327 /* NSDictionary+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +673,6 @@
 				929A58DB19654145007F2327 /* AFURLRequestSerialization.m in Sources */,
 				929A58DC19654145007F2327 /* AFURLResponseSerialization.m in Sources */,
 				929A58DD19654145007F2327 /* AFURLSessionManager.m in Sources */,
-				929A58DE19654145007F2327 /* NSDictionary+Extensions.m in Sources */,
 				929A58DF19654145007F2327 /* VZKeys.m in Sources */,
 				929A58E019654145007F2327 /* VZBaseViewController.m in Sources */,
 				929A58E119654145007F2327 /* VZPreferencesViewController.m in Sources */,
