@@ -10,6 +10,6 @@
 
 @interface NSDictionary (Extensions)
 
-- (NSString *)queryURLString;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *queryURLString;
 
 @end

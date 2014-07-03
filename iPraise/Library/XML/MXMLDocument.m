@@ -24,13 +24,13 @@
 
 @implementation MXMLDocument
 
-- (id)init
+- (instancetype)init
 {
     [self doesNotRecognizeSelector: _cmd];
     return nil;
 }
 
-- (id)initWithData: (NSData *)data
+- (instancetype)initWithData: (NSData *)data
        contentType: (MXMLContentType)type
 {
     if ((self = [super init]))
@@ -59,7 +59,7 @@
     return self;
 }
 
-- (id)initWithString: (NSString *)string
+- (instancetype)initWithString: (NSString *)string
          contentType: (MXMLContentType)type
 {
     if ((self = [super init]))

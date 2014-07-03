@@ -48,13 +48,13 @@ static NSString *_MXHTMLNodeGetAttributeForName(xmlNodePtr node, const char *nam
 
 @implementation MXMLNode
 
-- (id)init
+- (instancetype)init
 {
     [self doesNotRecognizeSelector: _cmd];
     return nil;
 }
 
-- (id)initWithXMLNode: (xmlNodePtr)node
+- (instancetype)initWithXMLNode: (xmlNodePtr)node
 {
     if (node)
     {
@@ -82,20 +82,41 @@ static NSString *_MXHTMLNodeGetAttributeForName(xmlNodePtr node, const char *nam
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"%p %@ %@ %@ %@ %d", self, [self name], [self nodeValue], [self textContent], [self attributes], [self nodeType]];
+    return [NSString stringWithFormat: @"%p %@ %@ %@ %d", self, [self name], [self textContent], [self attributes], [self nodeType]];
 }
 
 @end
 
 @implementation MXMLNode (Hierarchy)
 
+static inline BOOL _IsEmptyTextNode(xmlNodePtr nLooper)
+{
+    if (nLooper->type == XML_TEXT_NODE)
+    {
+        const char *content = (const char *)nLooper->content;
+        
+        if (content && strlen(content) > 0)
+        {
+            NSString *str = @(content);
+            str = [str stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+            return (nLooper->type == XML_TEXT_NODE && [str length] == 0);
+        }
+    }
+    
+    return NO;
+    
+    
+//    return (nLooper->type == XML_TEXT_NODE && strlen((const char *)nLooper->content) == 0);
+}
+
 static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
 {
     while (nLooper)
     {
-        //ignore text node
+        //ignore empty text node
         //
-        if (nLooper->type != XML_TEXT_NODE)
+        if (!_IsEmptyTextNode(nLooper))
         {
             return [[MXMLNode alloc] initWithXMLNode: nLooper];
         }
@@ -122,7 +143,7 @@ static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
         {
             //ignore text node
             //
-            if (nLooper->type != XML_TEXT_NODE)
+            if (!_IsEmptyTextNode(nLooper))
             {
                 MXMLNode *subNode = [[MXMLNode alloc] initWithXMLNode: nLooper];
                 [result addObject: subNode];
@@ -209,9 +230,9 @@ static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
     
     while (nLooper)
     {
-        //ignore text node
+        //ignore empty text node
         //
-        if (nLooper->type != XML_TEXT_NODE)
+        if (!_IsEmptyTextNode(nLooper))
         {
             return [[MXMLNode alloc] initWithXMLNode: nLooper];
         }
@@ -233,7 +254,6 @@ static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
 @implementation MXMLNode (Properties)
 
 @dynamic className;
-@dynamic nodeValue;
 @dynamic textContent;
 @dynamic tagName;
 
@@ -272,27 +292,16 @@ static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
 {
     if (!_content)
     {
-        if (_node->children && _node->children->content)
+        void * contents = xmlNodeGetContent(_node);
+        if (contents)
         {
-            _content = @((const char *)_node->children->content);
+            _content = @((const char *)contents);
+            xmlFree(contents);
         }
     }
     
     return _content;
-}
-
-- (NSString *)nodeValue
-{
-    if (!_nodeValue)
-    {
-        if (_node->content)
-        {
-            _nodeValue = @((const char *)_node->content);
-        }
-    }
-    
-    return _nodeValue;
-}
+} 
 
 - (NSDictionary *)attributes
 {
@@ -303,10 +312,9 @@ static MXMLNode *_NextNormalNodeFrom(xmlNodePtr nLooper)
         
         while (aLooper)
         {
-            if (aLooper->name && aLooper->children->content)
+            for(xmlNode * child = aLooper->children; NULL != child; child = child->next)
             {
-                [attributes setObject: @((const char *)aLooper->children->content)
-                               forKey: @((const char *)aLooper->name)];
+                attributes[@((const char *)aLooper->name)] = @((const char *)child->content);
             }
             
             aLooper = aLooper->next;

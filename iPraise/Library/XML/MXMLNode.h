@@ -17,19 +17,19 @@ typedef xmlElementType MXMLElementType;
 
 @interface MXMLNode (Hierarchy)
 
-- (MXMLNode *)firstChild;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) MXMLNode *firstChild;
 
-- (NSArray *)children;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *children;
 
 - (MXMLNode *)childForName: (NSString *)name;
 
 - (MXMLNode *)childForKeyPath: (NSString *)keyPath;
 
-- (MXMLNode *)nextSibling;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) MXMLNode *nextSibling;
 
 - (MXMLNode *)nextSiblingNamed: (NSString *)name;
 
-- (MXMLNode *)previousSibling;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) MXMLNode *previousSibling;
 
 @end
 
@@ -37,16 +37,15 @@ typedef xmlElementType MXMLElementType;
 
 @property (nonatomic, strong, readonly) NSString *className;
 
-- (NSString *)name;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *name;
 
 @property (nonatomic, strong, readonly) NSString *tagName;
 @property (nonatomic, strong, readonly) NSString *textContent;
-@property (nonatomic, strong, readonly) NSString *nodeValue;
 
 - (NSString *)attributeValueForName: (NSString *)name;
 
-- (NSDictionary *)attributes;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSDictionary *attributes;
 
-- (MXMLElementType)nodeType;
+@property (NS_NONATOMIC_IOSONLY, readonly) MXMLElementType nodeType;
 
 @end

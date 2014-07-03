@@ -11,6 +11,6 @@
 
 @interface MXMLNode (Creation)
 
-- (id)initWithXMLNode: (xmlNodePtr)node;
+- (instancetype)initWithXMLNode: (xmlNodePtr)node;
 
 @end

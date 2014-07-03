@@ -8,25 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-enum
+
+typedef NS_ENUM(NSUInteger, MXMLContentType)
 {
     MXMLContentTypeXML,
     MXMLContentTypeHTML,
 };
 
-typedef NSUInteger MXMLContentType;
-
 @class MXMLNode;
 
 @interface MXMLDocument : NSObject
 
-- (id)initWithData: (NSData *)data
-       contentType: (MXMLContentType)type;
+- (instancetype)initWithData: (NSData *)data
+       contentType: (MXMLContentType)type NS_DESIGNATED_INITIALIZER;
 
-- (id)initWithString: (NSString *)string
-       contentType: (MXMLContentType)type;
+- (instancetype)initWithString: (NSString *)string
+       contentType: (MXMLContentType)type NS_DESIGNATED_INITIALIZER;
 
-- (MXMLNode *)rootNode;
+@property (NS_NONATOMIC_IOSONLY, readonly, strong) MXMLNode *rootNode;
 
 - (NSArray *)nodesWithXPath: (NSString *)XPathString;
 
