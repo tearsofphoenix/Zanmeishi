@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>iPraise.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,16 @@
 			<true/>
 		</dict>
 		<key>929CB69D193EC4EF0016820F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92E751F11964FD0700F831F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>92E752101964FD0700F831F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

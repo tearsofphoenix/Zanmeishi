@@ -1,25 +1,18 @@
 //
 //  VZAppDelegate.m
-//  Zanmeishi
+//  iPraise
 //
-//  Created by Mac003 on 14-6-4.
+//  Created by Mac003 on 14-7-3.
 //  Copyright (c) 2014年 Mac003. All rights reserved.
 //
 
 #import "VZAppDelegate.h"
-#import "VZRootViewController.h"
 
 @implementation VZAppDelegate
 
-- (BOOL)          application: (UIApplication *)application
-didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    _window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
-    
-    VZRootViewController *rootViewController = [[VZRootViewController alloc] init];
-    [_window setRootViewController: rootViewController];
-    
-    [_window makeKeyAndVisible];
+    // Override point for customization after application launch.
     return YES;
 }
 							
