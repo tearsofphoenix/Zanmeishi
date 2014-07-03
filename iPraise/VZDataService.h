@@ -20,6 +20,7 @@
          callback: (VZCallback)callback;
 
 - (void)searchWithKeyword: (NSString *)keyword
+                     type: (NSString *)type
                  callback: (VZCallback)callback;
 
 @end

@@ -24,14 +24,9 @@
 
 @implementation MXMLDocument
 
-- (instancetype)init
-{
-    [self doesNotRecognizeSelector: _cmd];
-    return nil;
-}
 
 - (instancetype)initWithData: (NSData *)data
-       contentType: (MXMLContentType)type
+                 contentType: (MXMLContentType)type
 {
     if ((self = [super init]))
     {
@@ -60,7 +55,7 @@
 }
 
 - (instancetype)initWithString: (NSString *)string
-         contentType: (MXMLContentType)type
+                   contentType: (MXMLContentType)type
 {
     if ((self = [super init]))
     {
