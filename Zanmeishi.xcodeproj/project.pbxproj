@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60D2657D1965939500B8BD62 /* libfppopover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D265781965938900B8BD62 /* libfppopover.a */; };
 		60D265861965A45300B8BD62 /* libiOSHierarchyViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */; };
+		60D2658F1965AC7800B8BD62 /* libfppopover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2658C1965AC6B00B8BD62 /* libfppopover.a */; };
 		929A58AA196523B4007F2327 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */; };
 		929A58B11965321E007F2327 /* MXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AD1965321E007F2327 /* MXMLDocument.m */; };
 		929A58B21965321E007F2327 /* MXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AF1965321E007F2327 /* MXMLNode.m */; };
@@ -77,34 +77,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		60D265751965938900B8BD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 186C436F1538512100502D64;
-			remoteInfo = FPPopoverDemo;
-		};
-		60D265771965938900B8BD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 18D8FA30155050F0005E2222;
-			remoteInfo = fppopover;
-		};
-		60D265791965938900B8BD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1855E91316D9750700154B42;
-			remoteInfo = FPPopoverTests;
-		};
-		60D2657B1965939000B8BD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 18D8FA2F155050F0005E2222;
-			remoteInfo = fppopover;
-		};
 		60D265821965A43500B8BD62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */;
@@ -119,6 +91,20 @@
 			remoteGlobalIDString = 7C861E33153DF2E000935C95;
 			remoteInfo = iOSHierarchyViewer;
 		};
+		60D2658B1965AC6B00B8BD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18D8FA30155050F0005E2222;
+			remoteInfo = fppopover;
+		};
+		60D2658D1965AC7200B8BD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 18D8FA2F155050F0005E2222;
+			remoteInfo = fppopover;
+		};
 		92E752151964FD0800F831F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 929CB672193EC4ED0016820F /* Project object */;
@@ -129,8 +115,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FPPopoverDemo.xcodeproj; path = FPPopover/FPPopoverDemo.xcodeproj; sourceTree = "<group>"; };
 		60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSHierarchyViewer.xcodeproj; path = "iOS-Hierarchy-Viewer/iOSHierarchyViewer.xcodeproj"; sourceTree = "<group>"; };
+		60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FPPopoverDemo.xcodeproj; path = Popover/FPPopoverDemo.xcodeproj; sourceTree = "<group>"; };
 		929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
 		929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
 		929A58AC1965321E007F2327 /* MXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMLDocument.h; sourceTree = "<group>"; };
@@ -218,8 +204,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60D2658F1965AC7800B8BD62 /* libfppopover.a in Frameworks */,
 				60D265861965A45300B8BD62 /* libiOSHierarchyViewer.a in Frameworks */,
-				60D2657D1965939500B8BD62 /* libfppopover.a in Frameworks */,
 				929A58B419653286007F2327 /* libxml2.dylib in Frameworks */,
 				92E751F41964FD0700F831F3 /* CoreGraphics.framework in Frameworks */,
 				92E751F51964FD0700F831F3 /* UIKit.framework in Frameworks */,
@@ -241,20 +227,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60D265701965938800B8BD62 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				60D265761965938900B8BD62 /* FPPopoverDemo.app */,
-				60D265781965938900B8BD62 /* libfppopover.a */,
-				60D2657A1965938900B8BD62 /* FPPopoverTests.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		60D2657F1965A43500B8BD62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60D265881965AC6B00B8BD62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60D2658C1965AC6B00B8BD62 /* libfppopover.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,8 +388,8 @@
 		92E752501964FDC000F831F3 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */,
 				60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */,
-				60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */,
 				929A58AB1965321E007F2327 /* XML */,
 				92E752511964FDC000F831F3 /* AFNetworking */,
 				929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */,
@@ -465,8 +449,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				60D2658E1965AC7200B8BD62 /* PBXTargetDependency */,
 				60D265851965A44C00B8BD62 /* PBXTargetDependency */,
-				60D2657C1965939000B8BD62 /* PBXTargetDependency */,
 			);
 			name = iPraise;
 			productName = iPraise;
@@ -519,8 +503,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 60D265701965938800B8BD62 /* Products */;
-					ProjectRef = 60D2656F1965938800B8BD62 /* FPPopoverDemo.xcodeproj */;
+					ProductGroup = 60D265881965AC6B00B8BD62 /* Products */;
+					ProjectRef = 60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */;
 				},
 				{
 					ProductGroup = 60D2657F1965A43500B8BD62 /* Products */;
@@ -536,32 +520,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		60D265761965938900B8BD62 /* FPPopoverDemo.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = FPPopoverDemo.app;
-			remoteRef = 60D265751965938900B8BD62 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		60D265781965938900B8BD62 /* libfppopover.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libfppopover.a;
-			remoteRef = 60D265771965938900B8BD62 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		60D2657A1965938900B8BD62 /* FPPopoverTests.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = FPPopoverTests.app;
-			remoteRef = 60D265791965938900B8BD62 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libiOSHierarchyViewer.a;
 			remoteRef = 60D265821965A43500B8BD62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		60D2658C1965AC6B00B8BD62 /* libfppopover.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libfppopover.a;
+			remoteRef = 60D2658B1965AC6B00B8BD62 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -658,15 +628,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		60D2657C1965939000B8BD62 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = fppopover;
-			targetProxy = 60D2657B1965939000B8BD62 /* PBXContainerItemProxy */;
-		};
 		60D265851965A44C00B8BD62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iOSHierarchyViewer;
 			targetProxy = 60D265841965A44C00B8BD62 /* PBXContainerItemProxy */;
+		};
+		60D2658E1965AC7200B8BD62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = fppopover;
+			targetProxy = 60D2658D1965AC7200B8BD62 /* PBXContainerItemProxy */;
 		};
 		92E752161964FD0800F831F3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -780,7 +750,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/include/libxml2,
-					"$(SRCROOT)/iPraise/Library/FPPopover",
+					"$(SRCROOT)/iPraise/Library/Popover",
 					"$(SRCROOT)/iPraise/Library/iOS-Hierarchy-Viewer/iOSViewHierarchy",
 				);
 				INFOPLIST_FILE = "iPraise/iPraise-Info.plist";
@@ -800,7 +770,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/include/libxml2,
-					"$(SRCROOT)/iPraise/Library/FPPopover",
+					"$(SRCROOT)/iPraise/Library/Popover",
 					"$(SRCROOT)/iPraise/Library/iOS-Hierarchy-Viewer/iOSViewHierarchy",
 				);
 				INFOPLIST_FILE = "iPraise/iPraise-Info.plist";
