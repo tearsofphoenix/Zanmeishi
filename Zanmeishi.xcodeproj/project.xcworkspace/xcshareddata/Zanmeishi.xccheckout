@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E2F2EBDB-5A6B-4429-B26E-3D0F5E4DD2F6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Zanmeishi</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6D616A7E-D7CD-4E3E-AE86-4DA7AE6D2404</key>
+		<string>https://github.com/tearsofphoenix/Zanmeishi.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Zanmeishi.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6D616A7E-D7CD-4E3E-AE86-4DA7AE6D2404</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/tearsofphoenix/Zanmeishi.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6D616A7E-D7CD-4E3E-AE86-4DA7AE6D2404</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6D616A7E-D7CD-4E3E-AE86-4DA7AE6D2404</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Zanmeishi</string>
+		</dict>
+	</array>
+</dict>
+</plist>

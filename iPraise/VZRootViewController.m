@@ -23,20 +23,8 @@
                            bundle: nibBundleOrNil];
     if (self)
     {
-        VZSongsViewController *songsViewController = [[VZSongsViewController alloc] init];
-        //    UINavigationController *snavController = [[UINavigationController alloc] initWithRootViewController: songsViewController];
-        
-        VZSearchViewController *searchViewController = [[VZSearchViewController alloc] init];
-        //    UINavigationController *searchNavController = [[UINavigationController alloc] initWithRootViewController: searchViewController];
-        
-        VZPreferencesViewController *preferencesViewController = [[VZPreferencesViewController alloc] init];
-        //    UINavigationController *pnavController = [[UINavigationController alloc] initWithRootViewController: preferencesViewController];
-        
-        UITabBarController *tabBarController = [[UITabBarController alloc] init];
-        [tabBarController setViewControllers: @[songsViewController, searchViewController, preferencesViewController]];
-        [tabBarController setSelectedIndex: 0];
-        [self pushViewController: tabBarController
-                        animated: NO];    }
+    }
+    
     return self;
 }
 
@@ -44,7 +32,16 @@
 {
     [super viewDidLoad];
 
-
+    VZSongsViewController *songsViewController = [[VZSongsViewController alloc] init];
+    UINavigationController *snavController = [[UINavigationController alloc] initWithRootViewController: songsViewController];
+    
+    VZSearchViewController *searchViewController = [[VZSearchViewController alloc] init];
+    UINavigationController *searchNavController = [[UINavigationController alloc] initWithRootViewController: searchViewController];
+    
+    VZPreferencesViewController *preferencesViewController = [[VZPreferencesViewController alloc] init];
+    UINavigationController *pnavController = [[UINavigationController alloc] initWithRootViewController: preferencesViewController];
+    
+    [self setViewControllers: @[snavController, searchNavController, pnavController]];
 }
 
 @end

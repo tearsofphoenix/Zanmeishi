@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VZRootViewController : UINavigationController
+@interface VZRootViewController : UITabBarController
 
 @end

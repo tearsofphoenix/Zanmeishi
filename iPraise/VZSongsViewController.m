@@ -8,7 +8,7 @@
 
 #import "VZSongsViewController.h"
 #import "VZHeaders.h"
-#import "VZUserManager.h"
+#import "VZDataService.h"
 
 @interface VZSongsViewController ()
 

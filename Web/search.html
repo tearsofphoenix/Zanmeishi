@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>爱 - 歌曲搜索 - 赞美诗网_让赞美从四处响起！</title>
+    <meta name="author" content="ZMS Team" />
+    <meta name="keywords" content="赞美诗网、赞美诗歌、圣歌、圣诗、圣经音乐、基督教音乐、耶稣歌曲、赞美诗歌谱" />
+    <meta name="description" content="赞美诗网是中国最大的基督教音乐网站，提供海量的流行、古典、华语及英语诗歌在线试听、下载，并且歌库仍在不断更新中。网站的使命是借着诗歌传播福音，帮助弟兄姊妹与 神建立亲密关系。" />
+    <link rel="shortcut icon" href="http://static.zanmeishi.com/favicon.ico"/>
+    <link type="text/css" rel="stylesheet" href="http://static.zanmeishi.com/styles/main.css?v=14062317" />
+    <link type="text/css" rel="stylesheet" href="http://static.zanmeishi.com/styles/sys.css?v=14062317" />
+    <script type="text/javascript" src="http://static.zanmeishi.com/scripts/jquery.js?v=14062317"></script>
+    <script type="text/javascript" src="http://static.zanmeishi.com/artDialog5/artDialog.min.js?v=14062317"></script>
+    <script type="text/javascript" src="http://static.zanmeishi.com/scripts/sys.js?v=14062317"></script>
+    <script type="text/javascript" src="http://static.zanmeishi.com/scripts/zms.js?v=14062317"></script>
+    <link type="text/css" rel="stylesheet" href="http://static.zanmeishi.com/topmenu/topmenu.css?v=14062317" />
+    <!--[if gte IE 7]><!-->
+    <link type="text/css" rel="stylesheet" href="http://static.zanmeishi.com/artDialog5/skins/blue.css?v=14062317" />
+    <!--<![endif]-->
+    <!--[if lt IE 7]>
+    <link type="text/css" rel="stylesheet" href="http://static.zanmeishi.com/artDialog5/skins/default.css?v=14062317" />
+    <![endif]-->
+    <script type="text/javascript">
+        var zmsurl = {
+            sta: 'http://static.zanmeishi.com',
+            www: 'http://www.zanmeishi.com',
+            user: 'http://user.zanmeishi.com'
+        };
+    </script>
+
+</head>
+<body>
+<a name="gotop"></a>
+    <div class="container">
+        <div class="header">
+ 
+            <div class="lang"></div>
+
+            <div class="top">
+                <div class="logo" onclick="document.location='http://www.zanmeishi.com';" style=" cursor:pointer;"><!--img alt="logo" src="http://static.zanmeishi.com/images/logo.png" /--></div>
+                <div class="banner">公告：赞美诗网2014年-2015年奉献窗口开启，<a href="http://team.zanmeishi.com/donation/">点此奉献支持我们下一阶段事工开展</a>。</div>
+                <div class="sign">
+
+                    <div id="zms_login_yes" style="display: none;">
+                        <div>欢迎回来，<span id="zms_login_name"></span> <br /><img alt="history" src="http://static.zanmeishi.com/images/history.png" /> <a href="javascript:zmsp.last();">打开最近播放</a></div>
+                        <div>
+                      <div class="l">进入</div>  
+                        <div class="imrcmain0 imgl l" style="width:80px;">
+                        <div class="imcm imde" id="imouter0">
+                        <ul id="imenus0">
+                          <li class="imatm"  style="width:85px;"><a href="http://user.zanmeishi.com"><span class="imea imeam"><span></span></span>会员中心</a>    
+                            <div class="imsc">
+                            <div class="imsubc" style="width:100px;top:0px;left:-1px;"><ul style="">
+                              <li><a href="http://user.zanmeishi.com/account/index">账户信息</a></li>
+                              <li><a href="http://user.zanmeishi.com/fav/index">我的收藏夹</a></li>
+                              <li><a href="http://user.zanmeishi.com/box/index">我的音乐盒</a></li>
+                              <li><a href="http://user.zanmeishi.com/tab/index">我上传的歌谱</a></li>
+                              <li><a href="http://user.zanmeishi.com/article/index">我发布的文章</a></li>
+                            </ul>
+                            </div>
+                            </div>
+                            </li>
+                        </ul>
+                        </div>
+                        </div> 
+                        <div class="l">或 <a href="http://www.zanmeishi.com/user/logout">退出登录</a></div>
+                        </div>
+                    </div>
+
+                    <div id="zms_login_no" style="margin-top: 10px;">
+                        <div>您好，请 <a href="http://www.zanmeishi.com/user/login">登录</a> 或 <a href="http://www.zanmeishi.com/user/register">注册</a></div>
+                        <div>忘记密码了？<a href="http://www.zanmeishi.com/user/forgot">找回密码</a></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+ 
+            <div class="channel">
+                <ul>
+                    <li><a href="http://www.zanmeishi.com/"><span>首页</span></a></li>
+                    <li><a href="http://www.zanmeishi.com/artist/"><span>歌手</span></a></li>
+                    <li><a href="http://www.zanmeishi.com/music/"><span>音乐</span></a></li>
+                                        <li><a href="http://www.zanmeishi.com/tab/"><span>歌谱</span></a></li>
+                                        <li><a href="http://www.zanmeishi.com/holybible/"><span>听圣经</span></a></li>
+                    <li><a href="http://www.zanmeishi.com/client/"><span>客户端</span></a></li>
+                    <li ><a href="http://www.zanmeishi.com/top/"><span>排行榜</span></a></li>
+                    <li><a href="http://www.zanmeishi.com/user/"><span>会员</span></a></li>
+                                                                                <li class="on"><a href="#"><span>搜索</span></a></li>
+                                    </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="search">
+                <form method="get" action="http://www.zanmeishi.com/search/search" onSubmit="if (document.getElementById('searchkeyword').value == '' || document.getElementById('searchkeyword').value == '请输入搜索关键字') { alert('请输入搜索关键字！'); return false; }">
+                	<select name="type">
+                	  <option value="11">歌手</option>
+                	  <option value="12">专辑</option>
+                	  <option value="13" selected="selected">歌曲</option>
+                	  <option value="-13">歌词</option>
+                	  <option value="14">音乐盒</option>
+                	  <option value="18">歌谱</option>
+                	</select>
+                  <input type="text" class="keyword" id="searchkeyword" name="keyword" value="爱" onFocus="if (this.value == '请输入搜索关键字') { this.value = ''; this.style.color = '#333333'; }" onBlur="if (this.value == '') {  this.value = '请输入搜索关键字'; this.style.color = '#898989'; }" />
+                    <input type="submit" class="submit" value="" />
+                </form>
+            </div>
+        </div>
+
+        
+        
+        <div class="topshadow"></div>
+
+        <div class="mainbody">
+    <div class="blayout">
+        
+        
+        <h3>“爱”的搜索结果</h3>
+
+        <div class="tab">
+            <ul>
+                <li><a href="/search/artist/爱">歌手</a></li>
+                <li><a href="/search/album/爱">专辑</a></li>
+                <li class="on"><a href="/search/song/爱">歌曲</a></li>
+                <li><a href="/search/lyric/爱">歌词</a></li>
+                <li><a href="/search/box/爱">音乐盒</a></li>
+                <li><a href="/search/tab/爱">歌谱</a></li>
+                <!--li><a href="/search/article/爱">文章</a></li-->
+            </ul>
+        </div>        
+                <div>
+            <div class="songs mt5">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d2017d4c50078848b220" /></td>
+                        <td class="i">01</td>
+                        <td class="name">
+                            <a href="/song/14720.html" title="查看歌曲资料">你的<sont style="color: rgba(255,0,0, 0.99);">爱</sont>不离不弃</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/rolcc.html" class="gray_link" title="查看该歌手主页">生命河灵粮堂</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/when-the-wind-of-the-lord-is-rising.html" class="gray_link" title="查看该专辑">神机会的风</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:1.26%;">&nbsp;890993</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d2017d4c50078848b220');" title="播放你的爱不离不弃"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d2017d4c50078848b220');" title="将你的爱不离不弃添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d2017d4c50078848b220');" title="下载 你的爱不离不弃"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '你的爱不离不弃', '5162d2017d4c50078848b220');" title="收藏你的爱不离不弃"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '你的爱不离不弃', '5162d2017d4c50078848b220');" title="推荐你的爱不离不弃"></a>
+                            <a class="btn_box" href="javascript:zms.box('你的爱不离不弃', '5162d2017d4c50078848b220');" title="将你的爱不离不弃添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('你的爱不离不弃', '5162d2017d4c50078848b220');" title="将你的爱不离不弃送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d2017d4c50078848b220');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1e87d4c500788489f2d" /></td>
+                        <td class="i">02</td>
+                        <td class="name">
+                            <a href="/song/9767.html" title="查看歌曲资料">我们<sont style="color: rgba(255,0,0, 0.99);">爱</sont>让世界不一样</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/531.html" class="gray_link" title="查看该专辑">沙漠中的赞美</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.87%;">&nbsp;612088</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1e87d4c500788489f2d');" title="播放我们爱让世界不一样"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1e87d4c500788489f2d');" title="将我们爱让世界不一样添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1e87d4c500788489f2d');" title="下载 我们爱让世界不一样"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '我们爱让世界不一样', '5162d1e87d4c500788489f2d');" title="收藏我们爱让世界不一样"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '我们爱让世界不一样', '5162d1e87d4c500788489f2d');" title="推荐我们爱让世界不一样"></a>
+                            <a class="btn_box" href="javascript:zms.box('我们爱让世界不一样', '5162d1e87d4c500788489f2d');" title="将我们爱让世界不一样添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('我们爱让世界不一样', '5162d1e87d4c500788489f2d');" title="将我们爱让世界不一样送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1e87d4c500788489f2d');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1fe7d4c50078848afac" /></td>
+                        <td class="i">03</td>
+                        <td class="name">
+                            <a href="/song/14073.html" title="查看歌曲资料">相信有<sont style="color: rgba(255,0,0, 0.99);">爱</sont>，就有奇迹</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/believe-in-love-believe-in-miracles.html" class="gray_link" title="查看该专辑">相信有爱，就有奇迹</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.61%;">&nbsp;431529</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1fe7d4c50078848afac');" title="播放相信有爱，就有奇迹"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1fe7d4c50078848afac');" title="将相信有爱，就有奇迹添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '相信有爱，就有奇迹', '5162d1fe7d4c50078848afac');" title="收藏相信有爱，就有奇迹"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '相信有爱，就有奇迹', '5162d1fe7d4c50078848afac');" title="推荐相信有爱，就有奇迹"></a>
+                            <a class="btn_box" href="javascript:zms.box('相信有爱，就有奇迹', '5162d1fe7d4c50078848afac');" title="将相信有爱，就有奇迹添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('相信有爱，就有奇迹', '5162d1fe7d4c50078848afac');" title="将相信有爱，就有奇迹送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1fe7d4c50078848afac');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1eb7d4c50078848a109" /></td>
+                        <td class="i">04</td>
+                        <td class="name">
+                            <a href="/song/10250.html" title="查看歌曲资料">张震岳-耶稣<sont style="color: rgba(255,0,0, 0.99);">爱</sont>我</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/112.html" class="gray_link" title="查看该歌手主页">群星</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/540.html" class="gray_link" title="查看该专辑">艺人赞美诗合辑一</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.57%;">&nbsp;402679</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1eb7d4c50078848a109');" title="播放张震岳-耶稣爱我"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1eb7d4c50078848a109');" title="将张震岳-耶稣爱我添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1eb7d4c50078848a109');" title="下载 张震岳-耶稣爱我"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '张震岳-耶稣爱我', '5162d1eb7d4c50078848a109');" title="收藏张震岳-耶稣爱我"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '张震岳-耶稣爱我', '5162d1eb7d4c50078848a109');" title="推荐张震岳-耶稣爱我"></a>
+                            <a class="btn_box" href="javascript:zms.box('张震岳-耶稣爱我', '5162d1eb7d4c50078848a109');" title="将张震岳-耶稣爱我添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('张震岳-耶稣爱我', '5162d1eb7d4c50078848a109');" title="将张震岳-耶稣爱我送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1eb7d4c50078848a109');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1d97d4c50078848935b" /></td>
+                        <td class="i">05</td>
+                        <td class="name">
+                            <a href="/song/6224.html" title="查看歌曲资料">为<sont style="color: rgba(255,0,0, 0.99);">爱</sont>而生</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/27.html" class="gray_link" title="查看该歌手主页">更多专辑</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/310.html" class="gray_link" title="查看该专辑">绽放</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.52%;">&nbsp;366434</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1d97d4c50078848935b');" title="播放为爱而生"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1d97d4c50078848935b');" title="将为爱而生添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1d97d4c50078848935b');" title="下载 为爱而生"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '为爱而生', '5162d1d97d4c50078848935b');" title="收藏为爱而生"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '为爱而生', '5162d1d97d4c50078848935b');" title="推荐为爱而生"></a>
+                            <a class="btn_box" href="javascript:zms.box('为爱而生', '5162d1d97d4c50078848935b');" title="将为爱而生添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('为爱而生', '5162d1d97d4c50078848935b');" title="将为爱而生送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1d97d4c50078848935b');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="528dc66f00769e500d000005" /></td>
+                        <td class="i">06</td>
+                        <td class="name">
+                            <a href="/song/20248.html" title="查看歌曲资料">神<sont style="color: rgba(255,0,0, 0.99);">爱</sont>我</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/agwmm.html" class="gray_link" title="查看该歌手主页">基恩敬拜</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/path-of-peace-agwmm.html" class="gray_link" title="查看该专辑">平安的路</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.48%;">&nbsp;340487</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('528dc66f00769e500d000005');" title="播放神爱我"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('528dc66f00769e500d000005');" title="将神爱我添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '神爱我', '528dc66f00769e500d000005');" title="收藏神爱我"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '神爱我', '528dc66f00769e500d000005');" title="推荐神爱我"></a>
+                            <a class="btn_box" href="javascript:zms.box('神爱我', '528dc66f00769e500d000005');" title="将神爱我添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('神爱我', '528dc66f00769e500d000005');" title="将神爱我送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('528dc66f00769e500d000005');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1f77d4c50078848aab8" /></td>
+                        <td class="i">07</td>
+                        <td class="name">
+                            <a href="/song/12804.html" title="查看歌曲资料">01 <sont style="color: rgba(255,0,0, 0.99);">爱</sont>可以再更多一点点 More Love</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/morelove.html" class="gray_link" title="查看该专辑">爱可以再更多一点点</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.47%;">&nbsp;329751</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1f77d4c50078848aab8');" title="播放01 爱可以再更多一点点 More Love"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1f77d4c50078848aab8');" title="将01 爱可以再更多一点点 More Love添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '01 爱可以再更多一点点 More Love', '5162d1f77d4c50078848aab8');" title="收藏01 爱可以再更多一点点 More Love"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '01 爱可以再更多一点点 More Love', '5162d1f77d4c50078848aab8');" title="推荐01 爱可以再更多一点点 More Love"></a>
+                            <a class="btn_box" href="javascript:zms.box('01 爱可以再更多一点点 More Love', '5162d1f77d4c50078848aab8');" title="将01 爱可以再更多一点点 More Love添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('01 爱可以再更多一点点 More Love', '5162d1f77d4c50078848aab8');" title="将01 爱可以再更多一点点 More Love送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1f77d4c50078848aab8');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="52c4d7fd00769e701a000006" /></td>
+                        <td class="i">08</td>
+                        <td class="name">
+                            <a href="/song/21283.html" title="查看歌曲资料"><sont style="color: rgba(255,0,0, 0.99);">爱</sont>里没有惧怕</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/agwmm.html" class="gray_link" title="查看该歌手主页">基恩敬拜</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/never-grew-weary.html" class="gray_link" title="查看该专辑">永不疲乏</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.46%;">&nbsp;325332</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('52c4d7fd00769e701a000006');" title="播放爱里没有惧怕"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('52c4d7fd00769e701a000006');" title="将爱里没有惧怕添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '爱里没有惧怕', '52c4d7fd00769e701a000006');" title="收藏爱里没有惧怕"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '爱里没有惧怕', '52c4d7fd00769e701a000006');" title="推荐爱里没有惧怕"></a>
+                            <a class="btn_box" href="javascript:zms.box('爱里没有惧怕', '52c4d7fd00769e701a000006');" title="将爱里没有惧怕添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('爱里没有惧怕', '52c4d7fd00769e701a000006');" title="将爱里没有惧怕送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('52c4d7fd00769e701a000006');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d2007d4c50078848b0e6" /></td>
+                        <td class="i">09</td>
+                        <td class="name">
+                            <a href="/song/14398.html" title="查看歌曲资料">谁能使我与神的<sont style="color: rgba(255,0,0, 0.99);">爱</sont>隔绝</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/lamb-music.html" class="gray_link" title="查看该歌手主页">小羊诗歌</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/living-sacrifice.html" class="gray_link" title="查看该专辑">活祭</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.34%;">&nbsp;236968</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d2007d4c50078848b0e6');" title="播放谁能使我与神的爱隔绝"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d2007d4c50078848b0e6');" title="将谁能使我与神的爱隔绝添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '谁能使我与神的爱隔绝', '5162d2007d4c50078848b0e6');" title="收藏谁能使我与神的爱隔绝"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '谁能使我与神的爱隔绝', '5162d2007d4c50078848b0e6');" title="推荐谁能使我与神的爱隔绝"></a>
+                            <a class="btn_box" href="javascript:zms.box('谁能使我与神的爱隔绝', '5162d2007d4c50078848b0e6');" title="将谁能使我与神的爱隔绝添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('谁能使我与神的爱隔绝', '5162d2007d4c50078848b0e6');" title="将谁能使我与神的爱隔绝送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d2007d4c50078848b0e6');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d2077d4c50078848b66b" /></td>
+                        <td class="i">10</td>
+                        <td class="name">
+                            <a href="/song/15820.html" title="查看歌曲资料">活出<sont style="color: rgba(255,0,0, 0.99);">爱</sont></a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/amy-sand.html" class="gray_link" title="查看该歌手主页">盛晓玫</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/amy-sand-blessed.html" class="gray_link" title="查看该专辑">幸福Blessed</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.33%;">&nbsp;232873</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d2077d4c50078848b66b');" title="播放活出爱"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d2077d4c50078848b66b');" title="将活出爱添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '活出爱', '5162d2077d4c50078848b66b');" title="收藏活出爱"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '活出爱', '5162d2077d4c50078848b66b');" title="推荐活出爱"></a>
+                            <a class="btn_box" href="javascript:zms.box('活出爱', '5162d2077d4c50078848b66b');" title="将活出爱添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('活出爱', '5162d2077d4c50078848b66b');" title="将活出爱送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d2077d4c50078848b66b');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5231678e00769ebc2700000c" /></td>
+                        <td class="i">11</td>
+                        <td class="name">
+                            <a href="/song/19685.html" title="查看歌曲资料">伟大的<sont style="color: rgba(255,0,0, 0.99);">爱</sont></a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/instrument-music.html" class="gray_link" title="查看该歌手主页">纯音乐</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/1062.html" class="gray_link" title="查看该专辑">耶和华祝福满满</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.33%;">&nbsp;229732</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5231678e00769ebc2700000c');" title="播放伟大的爱"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5231678e00769ebc2700000c');" title="将伟大的爱添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5231678e00769ebc2700000c');" title="下载 伟大的爱"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '伟大的爱', '5231678e00769ebc2700000c');" title="收藏伟大的爱"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '伟大的爱', '5231678e00769ebc2700000c');" title="推荐伟大的爱"></a>
+                            <a class="btn_box" href="javascript:zms.box('伟大的爱', '5231678e00769ebc2700000c');" title="将伟大的爱添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('伟大的爱', '5231678e00769ebc2700000c');" title="将伟大的爱送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5231678e00769ebc2700000c');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1e07d4c5007884898db" /></td>
+                        <td class="i">12</td>
+                        <td class="name">
+                            <a href="/song/8106.html" title="查看歌曲资料">一生<sont style="color: rgba(255,0,0, 0.99);">爱</sont>你</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/10.html" class="gray_link" title="查看该专辑">深触我心</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.32%;">&nbsp;227632</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1e07d4c5007884898db');" title="播放一生爱你"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1e07d4c5007884898db');" title="将一生爱你添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1e07d4c5007884898db');" title="下载 一生爱你"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '一生爱你', '5162d1e07d4c5007884898db');" title="收藏一生爱你"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '一生爱你', '5162d1e07d4c5007884898db');" title="推荐一生爱你"></a>
+                            <a class="btn_box" href="javascript:zms.box('一生爱你', '5162d1e07d4c5007884898db');" title="将一生爱你添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('一生爱你', '5162d1e07d4c5007884898db');" title="将一生爱你送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1e07d4c5007884898db');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d2077d4c50078848b64f" /></td>
+                        <td class="i">13</td>
+                        <td class="name">
+                            <a href="/song/15792.html" title="查看歌曲资料"><sont style="color: rgba(255,0,0, 0.99);">爱</sont>何等奇妙</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/hillsong.html" class="gray_link" title="查看该歌手主页">Hillsong</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/hillsong-global-project-mandarin.html" class="gray_link" title="查看该专辑">Hillsong华语精选</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.32%;">&nbsp;224723</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d2077d4c50078848b64f');" title="播放爱何等奇妙"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d2077d4c50078848b64f');" title="将爱何等奇妙添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '爱何等奇妙', '5162d2077d4c50078848b64f');" title="收藏爱何等奇妙"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '爱何等奇妙', '5162d2077d4c50078848b64f');" title="推荐爱何等奇妙"></a>
+                            <a class="btn_box" href="javascript:zms.box('爱何等奇妙', '5162d2077d4c50078848b64f');" title="将爱何等奇妙添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('爱何等奇妙', '5162d2077d4c50078848b64f');" title="将爱何等奇妙送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d2077d4c50078848b64f');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="52f9e4cf00769e9828000005" /></td>
+                        <td class="i">14</td>
+                        <td class="name">
+                            <a href="/song/21427.html" title="查看歌曲资料">祂是真的<sont style="color: rgba(255,0,0, 0.99);">爱</sont>你啊</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/heaventunes.html" class="gray_link" title="查看该歌手主页">有情天音乐</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/1148.html" class="gray_link" title="查看该专辑">不怕</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.3%;">&nbsp;210867</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('52f9e4cf00769e9828000005');" title="播放祂是真的爱你啊"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('52f9e4cf00769e9828000005');" title="将祂是真的爱你啊添加至当前播放列表"></a>
+                                                            <a class="btn_nodown" title="本歌曲暂不提供下载"></a>
+							
+                            <a class="btn_fav" href="javascript:zms.fav(13, '祂是真的爱你啊', '52f9e4cf00769e9828000005');" title="收藏祂是真的爱你啊"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '祂是真的爱你啊', '52f9e4cf00769e9828000005');" title="推荐祂是真的爱你啊"></a>
+                            <a class="btn_box" href="javascript:zms.box('祂是真的爱你啊', '52f9e4cf00769e9828000005');" title="将祂是真的爱你啊添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('祂是真的爱你啊', '52f9e4cf00769e9828000005');" title="将祂是真的爱你啊送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('52f9e4cf00769e9828000005');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1d17d4c500788488d69" /></td>
+                        <td class="i">15</td>
+                        <td class="name">
+                            <a href="/song/4353.html" title="查看歌曲资料"><sont style="color: rgba(255,0,0, 0.99);">爱</sont>使我们相聚一起</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/kids-worship.html" class="gray_link" title="查看该歌手主页">儿童诗歌</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/200.html" class="gray_link" title="查看该专辑">儿童天地诗歌集（6）</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.29%;">&nbsp;204632</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1d17d4c500788488d69');" title="播放爱使我们相聚一起"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1d17d4c500788488d69');" title="将爱使我们相聚一起添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1d17d4c500788488d69');" title="下载 爱使我们相聚一起"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '爱使我们相聚一起', '5162d1d17d4c500788488d69');" title="收藏爱使我们相聚一起"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '爱使我们相聚一起', '5162d1d17d4c500788488d69');" title="推荐爱使我们相聚一起"></a>
+                            <a class="btn_box" href="javascript:zms.box('爱使我们相聚一起', '5162d1d17d4c500788488d69');" title="将爱使我们相聚一起添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('爱使我们相聚一起', '5162d1d17d4c500788488d69');" title="将爱使我们相聚一起送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1d17d4c500788488d69');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1fa7d4c50078848ac9e" /></td>
+                        <td class="i">16</td>
+                        <td class="name">
+                            <a href="/song/13290.html" title="查看歌曲资料">당신은사랑받기위해태어난사람(你是蒙<sont style="color: rgba(255,0,0, 0.99);">爱</sont>而出生的)</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/korean-worship.html" class="gray_link" title="查看该歌手主页">韩语诗歌</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/kr-collection-1.html" class="gray_link" title="查看该专辑">韩语诗歌精选集一</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.27%;">&nbsp;193400</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1fa7d4c50078848ac9e');" title="播放당신은사랑받기위해태어난사람(你是蒙爱而出生的)"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1fa7d4c50078848ac9e');" title="将당신은사랑받기위해태어난사람(你是蒙爱而出生的)添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1fa7d4c50078848ac9e');" title="下载 당신은사랑받기위해태어난사람(你是蒙爱而出生的)"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '당신은사랑받기위해태어난사람(你是蒙爱而出生的)', '5162d1fa7d4c50078848ac9e');" title="收藏당신은사랑받기위해태어난사람(你是蒙爱而出生的)"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '당신은사랑받기위해태어난사람(你是蒙爱而出生的)', '5162d1fa7d4c50078848ac9e');" title="推荐당신은사랑받기위해태어난사람(你是蒙爱而出生的)"></a>
+                            <a class="btn_box" href="javascript:zms.box('당신은사랑받기위해태어난사람(你是蒙爱而出生的)', '5162d1fa7d4c50078848ac9e');" title="将당신은사랑받기위해태어난사람(你是蒙爱而出生的)添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('당신은사랑받기위해태어난사람(你是蒙爱而出生的)', '5162d1fa7d4c50078848ac9e');" title="将당신은사랑받기위해태어난사람(你是蒙爱而出生的)送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1fa7d4c50078848ac9e');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1e07d4c5007884898df" /></td>
+                        <td class="i">17</td>
+                        <td class="name">
+                            <a href="/song/8110.html" title="查看歌曲资料">深深<sont style="color: rgba(255,0,0, 0.99);">爱</sont>你</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/10.html" class="gray_link" title="查看该专辑">深触我心</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.27%;">&nbsp;191173</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1e07d4c5007884898df');" title="播放深深爱你"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1e07d4c5007884898df');" title="将深深爱你添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1e07d4c5007884898df');" title="下载 深深爱你"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '深深爱你', '5162d1e07d4c5007884898df');" title="收藏深深爱你"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '深深爱你', '5162d1e07d4c5007884898df');" title="推荐深深爱你"></a>
+                            <a class="btn_box" href="javascript:zms.box('深深爱你', '5162d1e07d4c5007884898df');" title="将深深爱你添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('深深爱你', '5162d1e07d4c5007884898df');" title="将深深爱你送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1e07d4c5007884898df');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1e07d4c50078848991e" /></td>
+                        <td class="i">18</td>
+                        <td class="name">
+                            <a href="/song/8178.html" title="查看歌曲资料">耶稣<sont style="color: rgba(255,0,0, 0.99);">爱</sont>你</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/6.html" class="gray_link" title="查看该专辑">全新的你</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.26%;">&nbsp;184355</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1e07d4c50078848991e');" title="播放耶稣爱你"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1e07d4c50078848991e');" title="将耶稣爱你添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1e07d4c50078848991e');" title="下载 耶稣爱你"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '耶稣爱你', '5162d1e07d4c50078848991e');" title="收藏耶稣爱你"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '耶稣爱你', '5162d1e07d4c50078848991e');" title="推荐耶稣爱你"></a>
+                            <a class="btn_box" href="javascript:zms.box('耶稣爱你', '5162d1e07d4c50078848991e');" title="将耶稣爱你添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('耶稣爱你', '5162d1e07d4c50078848991e');" title="将耶稣爱你送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1e07d4c50078848991e');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr>
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1f97d4c50078848ac36" /></td>
+                        <td class="i">19</td>
+                        <td class="name">
+                            <a href="/song/13186.html" title="查看歌曲资料">主<sont style="color: rgba(255,0,0, 0.99);">爱</sont>在中国－献给第三届洛桑宣教大会</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/87.html" class="gray_link" title="查看该歌手主页">经典单曲</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/466.html" class="gray_link" title="查看该专辑">传统单曲1</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.26%;">&nbsp;182752</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1f97d4c50078848ac36');" title="播放主爱在中国－献给第三届洛桑宣教大会"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1f97d4c50078848ac36');" title="将主爱在中国－献给第三届洛桑宣教大会添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1f97d4c50078848ac36');" title="下载 主爱在中国－献给第三届洛桑宣教大会"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '主爱在中国－献给第三届洛桑宣教大会', '5162d1f97d4c50078848ac36');" title="收藏主爱在中国－献给第三届洛桑宣教大会"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '主爱在中国－献给第三届洛桑宣教大会', '5162d1f97d4c50078848ac36');" title="推荐主爱在中国－献给第三届洛桑宣教大会"></a>
+                            <a class="btn_box" href="javascript:zms.box('主爱在中国－献给第三届洛桑宣教大会', '5162d1f97d4c50078848ac36');" title="将主爱在中国－献给第三届洛桑宣教大会添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('主爱在中国－献给第三届洛桑宣教大会', '5162d1f97d4c50078848ac36');" title="将主爱在中国－献给第三届洛桑宣教大会送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1f97d4c50078848ac36');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                                            <tr class="on">
+                        <td class="chk"><input type="checkbox" name="songs_342742" value="5162d1c07d4c50078848818c" /></td>
+                        <td class="i">20</td>
+                        <td class="name">
+                            <a href="/song/279.html" title="查看歌曲资料">让<sont style="color: rgba(255,0,0, 0.99);">爱</sont>走动</a>
+                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/artist/stream-of-praise.html" class="gray_link" title="查看该歌手主页">赞美之泉</a>                            &nbsp;&nbsp;-&nbsp;&nbsp;<a href="/album/9.html" class="gray_link" title="查看该专辑">让爱走动</a>                        </td>
+                        <td class="length" title='总人气'><span style="width:0.26%;">&nbsp;181868</span></td>
+                        <td class="btn">
+                            <a class="btn_play" href="javascript:zmsp.play('5162d1c07d4c50078848818c');" title="播放让爱走动"></a>
+                            <a class="btn_list" href="javascript:zmsp.list('5162d1c07d4c50078848818c');" title="将让爱走动添加至当前播放列表"></a>
+                                                        
+                                <a class="btn_down" href="javascript:zms.down('5162d1c07d4c50078848818c');" title="下载 让爱走动"></a>                         	
+                            <a class="btn_fav" href="javascript:zms.fav(13, '让爱走动', '5162d1c07d4c50078848818c');" title="收藏让爱走动"></a>
+                            <a class="btn_show" href="javascript:zms.show(13, '让爱走动', '5162d1c07d4c50078848818c');" title="推荐让爱走动"></a>
+                            <a class="btn_box" href="javascript:zms.box('让爱走动', '5162d1c07d4c50078848818c');" title="将让爱走动添加至盒子"></a>
+                            <a class="btn_send" href="javascript:zms.send('让爱走动', '5162d1c07d4c50078848818c');" title="将让爱走动送给朋友"></a>
+                            <!--<span id="pb_@(info.Id)"><em></em> <a href="javascript:;" onclick="playmore('5162d1c07d4c50078848818c');" title="">添加标签</a> <a class="toplayer" href="/widget/isingle?sid=1769927189" title="">转贴到其它网站</a>  </span>-->
+                        </td>
+                    </tr>
+                                    </table>
+            </div>
+            <div class="btns mt10">
+                <ul>
+                    <li><a href="javascript:Sys.Chk('songs_342742', true);"><span>全选</span></a></li>
+                    <li><a href="javascript:Sys.Chk('songs_342742', false);"><span>取消</span></a></li>
+                    <li><a class="l" href="javascript:zmsp.list('songs_342742', true);" title="将选中歌曲添加至当前播放列表"><span>列表</span></a></li>
+                    <li><a class="p" href="javascript:zmsp.play('songs_342742', true);" title="播放选中的歌曲"><span>播放</span></a></li>
+                                    </ul>
+                <div class="clear"></div>
+            </div></div>
+        <div class="mt20"><div class="pager"><span class="no">« 上一页</span><span class="on">1</span><a href="/search/song/爱/2" onclick="">2</a><a href="/search/song/爱/3" onclick="">3</a><a href="/search/song/爱/4" onclick="">4</a><a href="/search/song/爱/5" onclick="">5</a><a href="/search/song/爱/6" onclick="">6</a>...<a href="/search/song/爱/74" onclick="">74</a><a href="/search/song/爱/75" onclick="">75</a><a href="/search/song/爱/2" onclick="">下一页 »</a></div></div>
+        
+    </div>
+
+
+        </div>
+ 
+        <div class="footer">
+            <div class="bom">
+                <dl>
+                    <dt>赞美诗网</dt>
+                    <dd><a href="http://www.zanmeishi.com/site/about.html">关于我们</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/site/contact.html">联系我们</a></dd>
+<!--                    <dd><a href="http://www.zanmeishi.com/site/service.html">服务协议</a></dd>
+-->                    <dd><a href="http://www.zanmeishi.com/site/copyright.html">版权声明</a></dd>
+                    <dd><a href="http://team.zanmeishi.com/join-us/">加入我们</a></dd>
+                    <dd><a href="http://team.zanmeishi.com/donation/" style="color:#ff0000;">资助我们</a></dd>
+                    <dd><a target="blank" href="http://team.zanmeishi.com">ZMS Team</a></dd>
+                    <!--<dd><a href="http://www.zanmeishi.com/site/partner.html">合作伙伴</a></dd>-->
+                </dl>
+                <dl>
+                    <dt>赞美诗歌</dt>
+                    <dd><a href="http://www.zanmeishi.com/artist/">歌手库</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/album/">专辑库</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/song/">歌曲库</a></dd>
+                    <!--<dd><a href="#">手机铃声</a></dd>-->
+                    <dd><a href="http://www.zanmeishi.com/radio/">电台</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/box/">音乐盒</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/tab/">歌谱</a></dd>
+                </dl>
+                <!--
+                <dl>
+                    <dt>敬拜者学校</dt>
+                    <dd><a href="/article/">基础乐理</a></dd>
+                    <dd><a href="/article/">声乐练耳</a></dd>
+                    <dd><a href="/article/">敬拜心得</a></dd>
+                    <dd><a href="/article/">视频资料</a></dd>
+                    <dd><a href="/tab/">歌谱下载</a></dd>
+                </dl>
+                -->
+                <dl>
+                    <dt>排行榜</dt>
+                    <dd><a href="http://www.zanmeishi.com/top/artist">歌手排行</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/top/album">专辑排行</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/top/song">歌曲排行</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/top/tab">歌谱排行</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/top/">更多...</a></dd>
+                </dl>
+                <dl>
+                    <dt>其它...</dt>
+                    <dd><a href="http://www.zanmeishi.com/holybible/">听圣经</a></dd>
+                    <dd><a href="http://www.zanmeishi.com/client/">客户端</a></dd>
+                    <!--dd><a href="http://www.zanmeishi.com/site/sitemap.html">网站地图</a></dd-->
+                    <dd><a href="http://www.zanmeishi.com/help/">帮助中心</a></dd>
+                    <dd><a href="/help/1.html">专辑上传</a></dd>
+                    <dd><a href="javascript:zms.feedback();">意见或建议</a></dd>
+                </dl>
+                <dl>
+                	<dt>赞美诗网客户端</dt>
+                    <dd><div class="l mr5"><a href="http://www.wandoujia.com/apps/com.zms.android"><img alt="android" src="http://static.zanmeishi.com/images/scan.png"></a></div><strong>安卓App</strong><br />手机扫一扫或<br />点击下载安装</dd>
+                    <dd><a href="https://itunes.apple.com/cn/app/zan!/id597860018?mt=8"><img alt="iphone" src="http://static.zanmeishi.com/images/zan-iphone.gif"></a></dd>
+                    <dd><a href="http://www.zanplayer.com/dl.php"><img alt="pc" src="http://static.zanmeishi.com/images/zan-pc.gif"></a></dd>
+                </dl>
+                <div class="clear"></div>
+                <div class="links">
+                友情链接： <a href="http://www.gongyue.org" target="_blank">基督教网络公约</a> <a href="http://www.readbible.cn" target="_blank">读圣经</a> <a href="http://jesus.bbs.net/" target="_blank">大陆基督徒论坛</a> <a href="http://www.kuanye.net" target="_blank">旷野呼声</a> <a href="http://www.fuyin.tv/" target="_blank">福音影视网</a> <a href="http://www.guizheng.net" target="_blank">归正福音网</a> <a href="http://www.god611.com/" target="_blank">基督徒见证分享网</a> <a href="https://www.ai-kan.net/" target="_blank">OC爱看网</a> <a href="https://www.ai-wen.net/" target="_blank">OC爱问网</a></div>
+                <div class="copyright">
+                Copyright © 2008 - 2014 Zanmeishi.Com Powered By <a target="blank" href="http://team.zanmeishi.com">ZMS Team</a>&nbsp;&nbsp;沪ICP备12022286号&nbsp;&nbsp;QQ交流群：207108618(请注明赞美诗网)&nbsp;&nbsp;<div class="r">关注我们：<a href="http://weibo.com/worshipgod" target="_blank" title="关注赞美诗网新浪微博，第一时间获取最新专辑资讯"><img alt="sina-weibo" src="http://static.zanmeishi.com/images/icons/sina.gif" /></a> <a href="http://t.qq.com/worshipgod" target="_blank" title="关注赞美诗网腾讯微博，第一时间获取最新专辑资讯"><img alt="qq-weibo" src="http://static.zanmeishi.com/images/icons/qq.gif" /></a> <a class="thumbnail" href="#"><img alt="wechat" src="http://static.zanmeishi.com/images/icons/wechat.gif" /><span><img alt="wechat" src="http://static.zanmeishi.com/images/wechat-zms.jpg" /></span></a>
+                
+                </div>
+				<div>
+                赞美诗网播放器基于 Adode Flash Player 开发，如您无法试听本站歌曲，请 <a href="http://get.adobe.com/cn/flashplayer/" target="_blank">安装最新Flash Player</a>，注意Ipad不支持Flash</div>
+                <div>我们推荐您使用 <a href="http://browser.qq.com/" target="_blank">QQ浏览器</a>，不推荐使用搜狗浏览器</div>                </div>
+            <a name="gobottom">&nbsp;</a>
+		</div>
+        </div>
+    </div>
+<div class="go">
+	<a title="返回顶部" class="top" href="#gotop"></a>
+    <a title="如果您在本页发现错误，请点此告诉我们" class="feedback"  href="javascript:zms.feedback();"></a>
+	<a title="返回底部" class="bottom" href="#gobottom"></a>
+</div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F230a799cf38f1165f8b3c42637fcb547' type='text/javascript'%3E%3C/script%3E"));
+</script>
+			
+<script type="text/javascript">
+if(navigator.userAgent.indexOf("MetaSr") > -1 && navigator.userAgent.indexOf("MSIE") > -1){
+	art.dialog({
+    title: '重要',
+    content: '我们检测到您正在使用搜狗浏览器兼容模式访问赞美诗网，如果您继续使用该模式访问本站，可能会出现诸多问题，我们建议您点击网址栏右侧按钮切换至高速模式或安装使用<a href="http://browser.qq.com/">QQ浏览器</a>。'
+})
+       // alert('');
+    }
+</script>
+ </body>
+</html>

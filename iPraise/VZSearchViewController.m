@@ -7,6 +7,7 @@
 //
 
 #import "VZSearchViewController.h"
+#import "VZDataService.h"
 
 @interface VZSearchViewController ()<UISearchBarDelegate>
 
@@ -64,7 +65,11 @@
 
 - (void)searchBarSearchButtonClicked: (UISearchBar *)searchBar
 {
-    
+    [[VZDataService manager] searchWithKeyword: [_searchBar text]
+                                      callback: (^(id result, NSError *error)
+                                                 {
+        
+                                                 })];
 }
 
 - (void)searchBarCancelButtonClicked: (UISearchBar *)searchBar

@@ -20,4 +20,9 @@
     return [[self baseURL] stringByAppendingString: @"/ajax/login"];
 }
 
++ (NSString *)searchURL
+{
+    return [[self baseURL] stringByAppendingString: @"/search/search"];
+}
+
 @end

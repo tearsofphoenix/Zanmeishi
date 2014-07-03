@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VZHeaders.h"
 
-@interface VZUserManager : NSObject
+@interface VZDataService : NSObject
 
 + (instancetype)manager;
 
@@ -18,6 +18,9 @@
 - (void)loginUser: (NSString *)userName
          password: (NSString *)password
          callback: (VZCallback)callback;
+
+- (void)searchWithKeyword: (NSString *)keyword
+                 callback: (VZCallback)callback;
 
 @end
 

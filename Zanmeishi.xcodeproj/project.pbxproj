@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		929A58AA196523B4007F2327 /* NSDictionary+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */; };
 		92E751F31964FD0700F831F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67D193EC4ED0016820F /* Foundation.framework */; };
 		92E751F41964FD0700F831F3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67F193EC4ED0016820F /* CoreGraphics.framework */; };
 		92E751F51964FD0700F831F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB681193EC4ED0016820F /* UIKit.framework */; };
 		92E751FB1964FD0700F831F3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92E751F91964FD0700F831F3 /* InfoPlist.strings */; };
 		92E751FD1964FD0700F831F3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E751FC1964FD0700F831F3 /* main.m */; };
 		92E752011964FD0700F831F3 /* VZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752001964FD0700F831F3 /* VZAppDelegate.m */; };
-		92E752041964FD0700F831F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E752021964FD0700F831F3 /* Main.storyboard */; };
 		92E7520C1964FD0700F831F3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92E7520B1964FD0700F831F3 /* Images.xcassets */; };
 		92E752121964FD0800F831F3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB69F193EC4EF0016820F /* XCTest.framework */; };
 		92E752131964FD0800F831F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929CB67D193EC4ED0016820F /* Foundation.framework */; };
@@ -26,7 +26,7 @@
 		92E7523D1964FD8B00F831F3 /* VZSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752301964FD8B00F831F3 /* VZSearchViewController.m */; };
 		92E7523E1964FD8B00F831F3 /* VZSongsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752321964FD8B00F831F3 /* VZSongsViewController.m */; };
 		92E7523F1964FD8B00F831F3 /* VZURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752341964FD8B00F831F3 /* VZURLManager.m */; };
-		92E752401964FD8B00F831F3 /* VZUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752361964FD8B00F831F3 /* VZUserManager.m */; };
+		92E752401964FD8B00F831F3 /* VZDataService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752361964FD8B00F831F3 /* VZDataService.m */; };
 		92E752411964FD8B00F831F3 /* VZViewService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E752381964FD8B00F831F3 /* VZViewService.m */; };
 		92E7524A1964FDB800F831F3 /* VZTabMe.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E752441964FDB800F831F3 /* VZTabMe.png */; };
 		92E7524B1964FDB800F831F3 /* VZTabMe@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 92E752451964FDB800F831F3 /* VZTabMe@2x.png */; };
@@ -55,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extensions.h"; sourceTree = "<group>"; };
+		929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extensions.m"; sourceTree = "<group>"; };
 		929CB67D193EC4ED0016820F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		929CB67F193EC4ED0016820F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		929CB681193EC4ED0016820F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -66,7 +68,6 @@
 		92E751FE1964FD0700F831F3 /* iPraise-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPraise-Prefix.pch"; sourceTree = "<group>"; };
 		92E751FF1964FD0700F831F3 /* VZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VZAppDelegate.h; sourceTree = "<group>"; };
 		92E752001964FD0700F831F3 /* VZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VZAppDelegate.m; sourceTree = "<group>"; };
-		92E752031964FD0700F831F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92E7520B1964FD0700F831F3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		92E752111964FD0700F831F3 /* iPraiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPraiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E752191964FD0800F831F3 /* iPraiseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPraiseTests-Info.plist"; sourceTree = "<group>"; };
@@ -84,8 +85,8 @@
 		92E752321964FD8B00F831F3 /* VZSongsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZSongsViewController.m; sourceTree = "<group>"; };
 		92E752331964FD8B00F831F3 /* VZURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZURLManager.h; sourceTree = "<group>"; };
 		92E752341964FD8B00F831F3 /* VZURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZURLManager.m; sourceTree = "<group>"; };
-		92E752351964FD8B00F831F3 /* VZUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZUserManager.h; sourceTree = "<group>"; };
-		92E752361964FD8B00F831F3 /* VZUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZUserManager.m; sourceTree = "<group>"; };
+		92E752351964FD8B00F831F3 /* VZDataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZDataService.h; sourceTree = "<group>"; };
+		92E752361964FD8B00F831F3 /* VZDataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZDataService.m; sourceTree = "<group>"; };
 		92E752371964FD8B00F831F3 /* VZViewService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZViewService.h; sourceTree = "<group>"; };
 		92E752381964FD8B00F831F3 /* VZViewService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZViewService.m; sourceTree = "<group>"; };
 		92E752441964FDB800F831F3 /* VZTabMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VZTabMe.png; sourceTree = "<group>"; };
@@ -188,8 +189,8 @@
 				92E752321964FD8B00F831F3 /* VZSongsViewController.m */,
 				92E752331964FD8B00F831F3 /* VZURLManager.h */,
 				92E752341964FD8B00F831F3 /* VZURLManager.m */,
-				92E752351964FD8B00F831F3 /* VZUserManager.h */,
-				92E752361964FD8B00F831F3 /* VZUserManager.m */,
+				92E752351964FD8B00F831F3 /* VZDataService.h */,
+				92E752361964FD8B00F831F3 /* VZDataService.m */,
 				92E752371964FD8B00F831F3 /* VZViewService.h */,
 				92E752381964FD8B00F831F3 /* VZViewService.m */,
 				92E751FF1964FD0700F831F3 /* VZAppDelegate.h */,
@@ -233,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				92E752431964FDB800F831F3 /* Resources */,
-				92E752021964FD0700F831F3 /* Main.storyboard */,
 				92E7520B1964FD0700F831F3 /* Images.xcassets */,
 			);
 			name = Resources;
@@ -254,6 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				92E752511964FDC000F831F3 /* AFNetworking */,
+				929A58A8196523B4007F2327 /* NSDictionary+Extensions.h */,
+				929A58A9196523B4007F2327 /* NSDictionary+Extensions.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -376,7 +378,6 @@
 				92E7524F1964FDB800F831F3 /* VZTabSongs@2x.png in Resources */,
 				92E7524E1964FDB800F831F3 /* VZTabSongs.png in Resources */,
 				92E751FB1964FD0700F831F3 /* InfoPlist.strings in Resources */,
-				92E752041964FD0700F831F3 /* Main.storyboard in Resources */,
 				92E7524B1964FDB800F831F3 /* VZTabMe@2x.png in Resources */,
 				92E7524A1964FDB800F831F3 /* VZTabMe.png in Resources */,
 			);
@@ -413,10 +414,11 @@
 				92E752681964FDC000F831F3 /* AFNetworkReachabilityManager.m in Sources */,
 				92E7526D1964FDC000F831F3 /* AFURLSessionManager.m in Sources */,
 				92E7523D1964FD8B00F831F3 /* VZSearchViewController.m in Sources */,
-				92E752401964FD8B00F831F3 /* VZUserManager.m in Sources */,
+				92E752401964FD8B00F831F3 /* VZDataService.m in Sources */,
 				92E7523F1964FD8B00F831F3 /* VZURLManager.m in Sources */,
 				92E7526C1964FDC000F831F3 /* AFURLResponseSerialization.m in Sources */,
 				92E7523B1964FD8B00F831F3 /* VZPreferencesViewController.m in Sources */,
+				929A58AA196523B4007F2327 /* NSDictionary+Extensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,14 +447,6 @@
 				92E751FA1964FD0700F831F3 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		92E752021964FD0700F831F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92E752031964FD0700F831F3 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		92E7521A1964FD0800F831F3 /* InfoPlist.strings */ = {
