@@ -40,8 +40,8 @@
     [[self navigationController] setNavigationBarHidden: YES];
     [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleLightContent];
     
-    [[self view] addGradientFrom: [VZTheme blueStartColor]
-                              to: [VZTheme blueEndColor]];
+    [[self view] addGradientFrom: [VZTheme purpleStartColor]
+                              to: [VZTheme purpleEndColor]];
     
     CGRect rect = [[self view] bounds];
 
