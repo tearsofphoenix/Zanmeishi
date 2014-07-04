@@ -8,6 +8,7 @@
 
 #import "VZPlayerViewController.h"
 #import "VZHeaders.h"
+#import "VZAudioPlayerView.h"
 
 @interface VZPlayerViewController ()
 
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *albumLabel;
 @property (nonatomic, strong) UILabel *artistLabel;
+
+@property (nonatomic, strong) VZAudioPlayerView *playerView;
 
 @end
 
@@ -37,8 +40,8 @@
     [[self navigationController] setNavigationBarHidden: YES];
     [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleLightContent];
     
-    [[self view] addGradientFrom: [UIColor colorWithHexNumber: 0x1ad6fd]
-                              to: [UIColor colorWithHexNumber: 0x7045DE]];
+    [[self view] addGradientFrom: [VZTheme blueStartColor]
+                              to: [VZTheme blueEndColor]];
     
     CGRect rect = [[self view] bounds];
 
@@ -58,6 +61,9 @@
          forControlEvents: UIControlEventTouchUpInside];
     
     [[self view] addSubview: backButton];
+    
+    _playerView = [[VZAudioPlayerView alloc] initWithFrame: CGRectMake(0, 300, 320, 90)];
+    [[self view] addSubview: _playerView];
     
     [self _updateUIForData];
 }

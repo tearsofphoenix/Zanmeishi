@@ -13,4 +13,10 @@
 + (UIFont *)smallNumberFont;
 + (UIColor *)textColor;
 
++ (UIColor *)purpleStartColor;
++ (UIColor *)purpleEndColor;
+
++ (UIColor *)blueStartColor;
++ (UIColor *)blueEndColor;
+
 @end

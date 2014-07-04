@@ -7,6 +7,7 @@
 //
 
 #import "VZTheme.h"
+#import "VZHeaders.h"
 
 @implementation VZTheme
 
@@ -20,6 +21,28 @@
 {
     return [UIColor colorWithWhite: 0.9
                              alpha: 0.9];
+}
+
+#pragma mark - purple
++ (UIColor *)purpleStartColor
+{
+    return [UIColor colorWithHexNumber: 0x7045DE];
+}
+
++ (UIColor *)purpleEndColor
+{
+    return [UIColor colorWithHexNumber: 0x1AD6FD];
+}
+
+#pragma mark - blue
++ (UIColor *)blueStartColor
+{
+    return [UIColor colorWithHexNumber: 0x1D77EF];
+}
+
++ (UIColor *)blueEndColor
+{
+    return [UIColor colorWithHexNumber: 0x81F3FD];
 }
 
 @end
