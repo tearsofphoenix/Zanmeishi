@@ -34,7 +34,21 @@
     
     [[self view] addGradientFrom: [UIColor colorWithHexNumber: 0x1ad6fd]
                               to: [UIColor colorWithHexNumber: 0x7045DE]];
+    
+    UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 20, 44, 44)];
+    [backButton setBackgroundImage: [UIImage imageNamed: @"VZBack"]
+                          forState: UIControlStateNormal];
+    [backButton setImageEdgeInsets: UIEdgeInsetsMake(7, 7, 8, 8)];
+    [backButton addTarget: self
+                   action: @selector(_handleBackEvent:)
+         forControlEvents: UIControlEventTouchUpInside];
+    [[self view] addSubview: backButton];
 
+}
+
+- (void)_handleBackEvent: (id)sender
+{
+    [[self navigationController] popViewControllerAnimated: YES];
 }
 
 @end
