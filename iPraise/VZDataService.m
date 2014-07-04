@@ -96,7 +96,8 @@
                                                {
                                                    NSString *str = [[NSString alloc] initWithData: result
                                                                                          encoding: NSUTF8StringEncoding];
-                                                   //                                                   NSLog(@"%@",  str);
+                                                   
+                                                   NSLog(@"%@",  str);
                                                    
                                                    [_operationsOfGET removeObject: operation];
                                                    
