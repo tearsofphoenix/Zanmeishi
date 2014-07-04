@@ -20,10 +20,10 @@ typedef NS_ENUM(NSUInteger, MXMLContentType)
 @interface MXMLDocument : NSObject
 
 - (instancetype)initWithData: (NSData *)data
-       contentType: (MXMLContentType)type NS_DESIGNATED_INITIALIZER;
+                 contentType: (MXMLContentType)type;
 
 - (instancetype)initWithString: (NSString *)string
-       contentType: (MXMLContentType)type NS_DESIGNATED_INITIALIZER;
+                   contentType: (MXMLContentType)type;
 
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) MXMLNode *rootNode;
 

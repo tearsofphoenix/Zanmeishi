@@ -20,6 +20,9 @@
 		60D265BD19661A6F00B8BD62 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265B619661A6F00B8BD62 /* MBProgressHUD.m */; };
 		60D265C0196621B000B8BD62 /* VZBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D265BE196621B000B8BD62 /* VZBack.png */; };
 		60D265C1196621B000B8BD62 /* VZBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D265BF196621B000B8BD62 /* VZBack@2x.png */; };
+		925BD6921966696A00ED657B /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD6911966696A00ED657B /* UIDevice+Extensions.m */; };
+		927F8D8F19668D62007439F7 /* VZAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F8D8E19668D62007439F7 /* VZAudioPlayerView.m */; };
+		927F8D921966934A007439F7 /* VZTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F8D911966934A007439F7 /* VZTheme.m */; };
 		929A58B11965321E007F2327 /* MXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AD1965321E007F2327 /* MXMLDocument.m */; };
 		929A58B21965321E007F2327 /* MXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A58AF1965321E007F2327 /* MXMLNode.m */; };
 		929A58B419653286007F2327 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 929A58B319653286007F2327 /* libxml2.dylib */; };
@@ -146,6 +149,12 @@
 		60D265B619661A6F00B8BD62 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		60D265BE196621B000B8BD62 /* VZBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VZBack.png; sourceTree = "<group>"; };
 		60D265BF196621B000B8BD62 /* VZBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VZBack@2x.png"; sourceTree = "<group>"; };
+		925BD6901966696A00ED657B /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extensions.h"; sourceTree = "<group>"; };
+		925BD6911966696A00ED657B /* UIDevice+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extensions.m"; sourceTree = "<group>"; };
+		927F8D8D19668D62007439F7 /* VZAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAudioPlayerView.h; sourceTree = "<group>"; };
+		927F8D8E19668D62007439F7 /* VZAudioPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZAudioPlayerView.m; sourceTree = "<group>"; };
+		927F8D901966934A007439F7 /* VZTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZTheme.h; sourceTree = "<group>"; };
+		927F8D911966934A007439F7 /* VZTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VZTheme.m; sourceTree = "<group>"; };
 		929A58AC1965321E007F2327 /* MXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMLDocument.h; sourceTree = "<group>"; };
 		929A58AD1965321E007F2327 /* MXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXMLDocument.m; sourceTree = "<group>"; };
 		929A58AE1965321E007F2327 /* MXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXMLNode.h; sourceTree = "<group>"; };
@@ -273,6 +282,8 @@
 		60D265A719661A6F00B8BD62 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				925BD6901966696A00ED657B /* UIDevice+Extensions.h */,
+				925BD6911966696A00ED657B /* UIDevice+Extensions.m */,
 				60D265A819661A6F00B8BD62 /* NSData+Extensions.h */,
 				60D265A919661A6F00B8BD62 /* NSData+Extensions.m */,
 				60D265AA19661A6F00B8BD62 /* NSDictionary+Extensions.h */,
@@ -368,6 +379,8 @@
 				92E7526E1964FDDB00F831F3 /* Global */,
 				92E752261964FD8B00F831F3 /* VZBaseViewController.h */,
 				92E752271964FD8B00F831F3 /* VZBaseViewController.m */,
+				927F8D901966934A007439F7 /* VZTheme.h */,
+				927F8D911966934A007439F7 /* VZTheme.m */,
 				92E7522B1964FD8B00F831F3 /* VZPreferencesViewController.h */,
 				92E7522C1964FD8B00F831F3 /* VZPreferencesViewController.m */,
 				92E7522D1964FD8B00F831F3 /* VZRootViewController.h */,
@@ -376,6 +389,8 @@
 				92E752301964FD8B00F831F3 /* VZSearchViewController.m */,
 				60D265921965B78300B8BD62 /* VZPlayerViewController.h */,
 				60D265931965B78300B8BD62 /* VZPlayerViewController.m */,
+				927F8D8D19668D62007439F7 /* VZAudioPlayerView.h */,
+				927F8D8E19668D62007439F7 /* VZAudioPlayerView.m */,
 				92E752311964FD8B00F831F3 /* VZSongsViewController.h */,
 				92E752321964FD8B00F831F3 /* VZSongsViewController.m */,
 				92E752331964FD8B00F831F3 /* VZURLManager.h */,
@@ -644,8 +659,10 @@
 				60D265941965B78300B8BD62 /* VZPlayerViewController.m in Sources */,
 				92E7523E1964FD8B00F831F3 /* VZSongsViewController.m in Sources */,
 				92E7526B1964FDC000F831F3 /* AFURLRequestSerialization.m in Sources */,
+				927F8D8F19668D62007439F7 /* VZAudioPlayerView.m in Sources */,
 				92E752671964FDC000F831F3 /* AFHTTPSessionManager.m in Sources */,
 				92E752651964FDC000F831F3 /* AFHTTPRequestOperation.m in Sources */,
+				925BD6921966696A00ED657B /* UIDevice+Extensions.m in Sources */,
 				92E7523C1964FD8B00F831F3 /* VZRootViewController.m in Sources */,
 				92E752691964FDC000F831F3 /* AFSecurityPolicy.m in Sources */,
 				92E752731964FDDB00F831F3 /* VZKeys.m in Sources */,
@@ -663,6 +680,7 @@
 				92E7523F1964FD8B00F831F3 /* VZURLManager.m in Sources */,
 				92E7526C1964FDC000F831F3 /* AFURLResponseSerialization.m in Sources */,
 				92E7523B1964FD8B00F831F3 /* VZPreferencesViewController.m in Sources */,
+				927F8D921966934A007439F7 /* VZTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -198,6 +198,7 @@ heightForRowAtIndexPath: (NSIndexPath *)indexPath
 didSelectRowAtIndexPath: (NSIndexPath *)indexPath
 {
     VZPlayerViewController *playerViewController = [[VZPlayerViewController alloc] init];
+    [playerViewController setSongInfo: _searchResult[[indexPath row]]];
     
     [[self navigationController] pushViewController: playerViewController
                                            animated: YES];

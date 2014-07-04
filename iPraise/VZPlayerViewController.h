@@ -11,4 +11,6 @@
 
 @interface VZPlayerViewController : VZBaseViewController
 
+@property (nonatomic, strong) NSDictionary *songInfo;
+
 @end

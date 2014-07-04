@@ -11,6 +11,11 @@
 
 @interface VZPlayerViewController ()
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *albumLabel;
+@property (nonatomic, strong) UILabel *artistLabel;
+
 @end
 
 @implementation VZPlayerViewController
@@ -35,19 +40,36 @@
     [[self view] addGradientFrom: [UIColor colorWithHexNumber: 0x1ad6fd]
                               to: [UIColor colorWithHexNumber: 0x7045DE]];
     
+    CGRect rect = [[self view] bounds];
+
+    _titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 20, rect.size.width, 44)];
+    [_titleLabel setBackgroundColor: [UIColor clearColor]];
+    [_titleLabel setTextAlignment: NSTextAlignmentCenter];
+    [_titleLabel setTextColor: [UIColor whiteColor]];
+    
+    [[self view] addSubview: _titleLabel];
+    
     UIButton *backButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 20, 44, 44)];
-    [backButton setBackgroundImage: [UIImage imageNamed: @"VZBack"]
-                          forState: UIControlStateNormal];
+    [backButton setImage: [UIImage imageNamed: @"VZBack"]
+                forState: UIControlStateNormal];
     [backButton setImageEdgeInsets: UIEdgeInsetsMake(7, 7, 8, 8)];
     [backButton addTarget: self
                    action: @selector(_handleBackEvent:)
          forControlEvents: UIControlEventTouchUpInside];
+    
     [[self view] addSubview: backButton];
+    
+    [self _updateUIForData];
+}
 
+- (void)_updateUIForData
+{
+    [_titleLabel setText: _songInfo[VZSongNameKey]];
 }
 
 - (void)_handleBackEvent: (id)sender
 {
+    [[self navigationController] setNavigationBarHidden: NO];
     [[self navigationController] popViewControllerAnimated: YES];
 }
 

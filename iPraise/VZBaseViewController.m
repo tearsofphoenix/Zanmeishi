@@ -30,21 +30,12 @@
 {
     [super viewDidLoad];
     
-    if ([self respondsToSelector: @selector(setExtendedLayoutIncludesOpaqueBars:)])
+    if ([UIDevice systemVersionGreaterThanOrEqual: @"7"])
     {
         [self setExtendedLayoutIncludesOpaqueBars: NO];
-    }
-    
-    if ([self respondsToSelector: @selector(setEdgesForExtendedLayout:)])
-    {
         [self setEdgesForExtendedLayout: UIRectEdgeNone];
-    }
-    
-    if ([self respondsToSelector: @selector(setAutomaticallyAdjustsScrollViewInsets:)])
-    {
         [self setAutomaticallyAdjustsScrollViewInsets: NO];
     }
-    
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "VZBase.h"
 #import "VZKeys.h"
 #import "VZURLManager.h"
+#import "VZTheme.h"
 
 #import "NSDictionary+Extensions.h"
 #import "NSData+Extensions.h"
@@ -16,6 +17,8 @@
 #import "NSObject+Extensions.h"
 #import "UIColor+Extensions.h"
 #import "UIView+Extensions.h"
+#import "UIDevice+Extensions.h"
+
 
 #pragma mark - xml
 
