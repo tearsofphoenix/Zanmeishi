@@ -20,21 +20,20 @@ NSArray *PerformXPathQuery(xmlDocPtr doc, NSString *query);
 
 NSDictionary *DictionaryForNode(xmlNodePtr currentNode, NSMutableDictionary *parentResult,BOOL parentContent)
 {
-  NSMutableDictionary *resultForNode = [NSMutableDictionary dictionary];
-
-  if (currentNode->name)
+    NSMutableDictionary *resultForNode = [NSMutableDictionary dictionary];
+    
+    //name
+    //
+    if (currentNode->name)
     {
-      NSString *currentNodeContent =
-        @((const char *)currentNode->name);
-      resultForNode[TFHppleNodeNameKey] = currentNodeContent;
+        resultForNode[TFHppleNodeNameKey] = @((const char *)currentNode->name);
     }
-
-  if (currentNode->content && currentNode->content != (xmlChar *)-1)
+    
+    if (currentNode->content && currentNode->content != (xmlChar *)-1)
     {
-      NSString *currentNodeContent =
-        @((const char *)currentNode->content);
-
-      if ([resultForNode[TFHppleNodeNameKey] isEqual:@"text"] && parentResult)
+        NSString *currentNodeContent = @((const char *)currentNode->content);
+        
+        if ([resultForNode[TFHppleNodeNameKey] isEqual: @"text"] && parentResult)
         {
             if(parentContent)
             {
@@ -45,137 +44,144 @@ NSDictionary *DictionaryForNode(xmlNodePtr currentNode, NSMutableDictionary *par
             {
                 resultForNode[TFHppleNodeContentKey] = currentNodeContent;
             }
-//            NSLog(@"content: %@",currentNodeContent);
+            //            NSLog(@"content: %@",currentNodeContent);
             return resultForNode;
-
-        }
-      else {
-          resultForNode[TFHppleNodeContentKey] = currentNodeContent;
-      }
-
-
-    }
-
-  xmlAttr *attribute = currentNode->properties;
-  if (attribute)
-    {
-      NSMutableArray *attributeArray = [NSMutableArray array];
-      while (attribute)
+            
+        }else
         {
-          NSMutableDictionary *attributeDictionary = [NSMutableDictionary dictionary];
-          NSString *attributeName =
+            resultForNode[TFHppleNodeContentKey] = currentNodeContent;
+        }
+        
+        
+    }
+    
+    xmlAttr *attribute = currentNode->properties;
+    if (attribute)
+    {
+        NSMutableArray *attributeArray = [NSMutableArray array];
+        while (attribute)
+        {
+            NSMutableDictionary *attributeDictionary = [NSMutableDictionary dictionary];
+            NSString *attributeName =
             @((const char *)attribute->name);
-          if (attributeName)
+            if (attributeName)
             {
-//                NSLog(@"Attribute Name Set: %@",attributeName);
-              attributeDictionary[TFHppleNodeAttributeNameKey] = attributeName;
+                //                NSLog(@"Attribute Name Set: %@",attributeName);
+                attributeDictionary[TFHppleNodeAttributeNameKey] = attributeName;
             }
-
-          if (attribute->children)
+            
+            if (attribute->children)
             {
-              NSDictionary *childDictionary = DictionaryForNode(attribute->children, attributeDictionary,true);
-              if (childDictionary)
+                NSDictionary *childDictionary = DictionaryForNode(attribute->children, attributeDictionary,true);
+                if (childDictionary)
                 {
-                  attributeDictionary[@"attributeContent"] = childDictionary;
+                    attributeDictionary[@"attributeContent"] = childDictionary;
                 }
             }
-
-          if ([attributeDictionary count] > 0)
+            
+            if ([attributeDictionary count] > 0)
             {
-              [attributeArray addObject:attributeDictionary];
+                [attributeArray addObject:attributeDictionary];
             }
-          attribute = attribute->next;
+            attribute = attribute->next;
         }
-
-      if ([attributeArray count] > 0)
+        
+        if ([attributeArray count] > 0)
         {
-          resultForNode[TFHppleNodeAttributeArrayKey] = attributeArray;
+            resultForNode[TFHppleNodeAttributeArrayKey] = attributeArray;
         }
     }
-
-  xmlNodePtr childNode = currentNode->children;
-  if (childNode)
+    
+    xmlNodePtr childNode = currentNode->children;
+    if (childNode)
     {
-      NSMutableArray *childContentArray = [NSMutableArray array];
-      while (childNode)
+        NSMutableArray *childContentArray = [NSMutableArray array];
+        while (childNode)
         {
-          NSDictionary *childDictionary = DictionaryForNode(childNode, resultForNode,false);
-          if (childDictionary)
+            NSDictionary *childDictionary = DictionaryForNode(childNode, resultForNode,false);
+            if (childDictionary)
             {
-              [childContentArray addObject:childDictionary];
+                [childContentArray addObject:childDictionary];
             }
-          childNode = childNode->next;
+            childNode = childNode->next;
         }
-      if ([childContentArray count] > 0)
+        if ([childContentArray count] > 0)
         {
-          resultForNode[TFHppleNodeChildrenKey] = childContentArray;
+            resultForNode[TFHppleNodeChildrenKey] = childContentArray;
         }
     }
-
-  xmlBufferPtr buffer = xmlBufferCreate();
-  xmlNodeDump(buffer, currentNode->doc, currentNode, 0, 0);
-
-  NSString *rawContent = @((const char *)buffer->content);
-  if (rawContent != nil)
-  {
-      resultForNode[@"raw"] = rawContent;
-  }
+    
+    xmlChar *text = xmlNodeGetContent(currentNode);
+    if (text)
+    {
+        resultForNode[@"text"] = @((const char *)text);
+        xmlFree(text);
+    }
+    
+    xmlBufferPtr buffer = xmlBufferCreate();
+    xmlNodeDump(buffer, currentNode->doc, currentNode, 0, 0);
+    
+    NSString *rawContent = @((const char *)buffer->content);
+    if (rawContent != nil)
+    {
+        resultForNode[@"raw"] = rawContent;
+    }
     xmlBufferFree(buffer);
     
-  return resultForNode;
+    return resultForNode;
 }
 
 NSArray *PerformXPathQuery(xmlDocPtr doc, NSString *query)
 {
-  xmlXPathContextPtr xpathCtx;
-  xmlXPathObjectPtr xpathObj;
-
-  /* Make sure that passed query is non-nil and is NSString object */
-  if (query == nil || ![query isKindOfClass:[NSString class]]) 
-  {
-    return nil;
-  }
-  
-  /* Create xpath evaluation context */
-  xpathCtx = xmlXPathNewContext(doc);
-  if(xpathCtx == NULL)
+    xmlXPathContextPtr xpathCtx;
+    xmlXPathObjectPtr xpathObj;
+    
+    /* Make sure that passed query is non-nil and is NSString object */
+    if (query == nil || ![query isKindOfClass:[NSString class]])
     {
-      NSLog(@"Unable to create XPath context.");
-      return nil;
+        return nil;
     }
-
-  /* Evaluate xpath expression */
-  xpathObj = xmlXPathEvalExpression((xmlChar *)[query cStringUsingEncoding:NSUTF8StringEncoding], xpathCtx);
-  if(xpathObj == NULL) {
-    NSLog(@"Unable to evaluate XPath.");
-    xmlXPathFreeContext(xpathCtx);
-    return nil;
-  }
-
-  xmlNodeSetPtr nodes = xpathObj->nodesetval;
-  if (!nodes)
+    
+    /* Create xpath evaluation context */
+    xpathCtx = xmlXPathNewContext(doc);
+    if(xpathCtx == NULL)
     {
-      NSLog(@"Nodes was nil.");
-      xmlXPathFreeObject(xpathObj);
-      xmlXPathFreeContext(xpathCtx);
-      return nil;
+        NSLog(@"Unable to create XPath context.");
+        return nil;
     }
-
-  NSMutableArray *resultNodes = [NSMutableArray array];
-  for (NSInteger i = 0; i < nodes->nodeNr; i++)
+    
+    /* Evaluate xpath expression */
+    xpathObj = xmlXPathEvalExpression((xmlChar *)[query cStringUsingEncoding:NSUTF8StringEncoding], xpathCtx);
+    if(xpathObj == NULL) {
+        NSLog(@"Unable to evaluate XPath.");
+        xmlXPathFreeContext(xpathCtx);
+        return nil;
+    }
+    
+    xmlNodeSetPtr nodes = xpathObj->nodesetval;
+    if (!nodes)
     {
-      NSDictionary *nodeDictionary = DictionaryForNode(nodes->nodeTab[i], nil,false);
-      if (nodeDictionary)
+        NSLog(@"Nodes was nil.");
+        xmlXPathFreeObject(xpathObj);
+        xmlXPathFreeContext(xpathCtx);
+        return nil;
+    }
+    
+    NSMutableArray *resultNodes = [NSMutableArray array];
+    for (NSInteger i = 0; i < nodes->nodeNr; i++)
+    {
+        NSDictionary *nodeDictionary = DictionaryForNode(nodes->nodeTab[i], nil,false);
+        if (nodeDictionary)
         {
-          [resultNodes addObject:nodeDictionary];
+            [resultNodes addObject:nodeDictionary];
         }
     }
-
-  /* Cleanup */
-  xmlXPathFreeObject(xpathObj);
-  xmlXPathFreeContext(xpathCtx);
-
-  return resultNodes;
+    
+    /* Cleanup */
+    xmlXPathFreeObject(xpathObj);
+    xmlXPathFreeContext(xpathCtx);
+    
+    return resultNodes;
 }
 
 NSArray *PerformHTMLXPathQuery(NSData *document, NSString *query)
@@ -186,11 +192,14 @@ NSArray *PerformHTMLXPathQuery(NSData *document, NSString *query)
 NSArray *PerformHTMLXPathQueryWithEncoding(NSData *document, NSString *query,NSString *encoding)
 {
     xmlDocPtr doc;
-
+    
     /* Load XML document */
-    const char *encoded = encoding ? [encoding cStringUsingEncoding:NSUTF8StringEncoding] : NULL;
-
-    doc = htmlReadMemory([document bytes], (int)[document length], "", encoded, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+    const char *encoded = encoding ? [encoding cStringUsingEncoding: NSUTF8StringEncoding] : "utf-8";
+    
+    doc = htmlReadMemory([document bytes], (int)[document length], "", encoded,
+                         HTML_PARSE_NOWARNING
+                         | HTML_PARSE_NOERROR
+                         | HTML_PARSE_NOBLANKS);
     
     if (doc == NULL)
     {
@@ -215,7 +224,7 @@ NSArray *PerformXMLXPathQueryWithEncoding(NSData *document, NSString *query,NSSt
     
     /* Load XML document */
     const char *encoded = encoding ? [encoding cStringUsingEncoding:NSUTF8StringEncoding] : NULL;
-
+    
     doc = xmlReadMemory([document bytes], (int)[document length], "", encoded, XML_PARSE_RECOVER);
     
     if (doc == NULL)

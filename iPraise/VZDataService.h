@@ -23,6 +23,9 @@
                      type: (NSString *)type
                  callback: (VZCallback)callback;
 
+- (void)fetchSong: (NSString *)songSubPath
+         callback: (VZCallback)callback;
+
 @end
 
 extern NSString * const VZUserAvatarKey;

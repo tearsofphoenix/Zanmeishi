@@ -40,11 +40,11 @@ NSString * const TFHppleTextNodeName             = @"text";
 
 @interface TFHppleElement ()
 {
-    NSDictionary * node;
     BOOL isXML;
     NSString *encoding;
 }
 
+@property (nonatomic, strong)    NSDictionary * node;
 @property (nonatomic, unsafe_unretained, readwrite) TFHppleElement *parent;
 @property (nonatomic, strong) NSArray *children;
 @property (nonatomic, strong) NSDictionary *attributes;
@@ -62,7 +62,7 @@ NSString * const TFHppleTextNodeName             = @"text";
         return nil;
     
     isXML = isDataXML;
-    node = theNode;
+    _node = theNode;
     encoding = theEncoding;
     
     return self;
@@ -77,18 +77,18 @@ NSString * const TFHppleTextNodeName             = @"text";
 
 - (NSString *)raw
 {
-    return node[@"raw"];
+    return _node[@"raw"];
 }
 
 - (NSString *) content
 {
-    return node[TFHppleNodeContentKey];
+    return _node[TFHppleNodeContentKey];
 }
 
 
 - (NSString *) tagName
 {
-    return node[TFHppleNodeNameKey];
+    return _node[TFHppleNodeNameKey];
 }
 
 - (NSArray *) children
@@ -98,7 +98,7 @@ NSString * const TFHppleTextNodeName             = @"text";
         
         NSMutableArray *children = [NSMutableArray array];
         
-        for (NSDictionary *child in node[TFHppleNodeChildrenKey])
+        for (NSDictionary *child in _node[TFHppleNodeChildrenKey])
         {
             TFHppleElement *element = [TFHppleElement hppleElementWithNode: child
                                                                      isXML: isXML
@@ -128,7 +128,7 @@ NSString * const TFHppleTextNodeName             = @"text";
     if (!_attributes)
     {
         NSMutableDictionary * translatedAttributes = [NSMutableDictionary dictionary];
-        NSArray *array = node[TFHppleNodeAttributeArrayKey];
+        NSArray *array = _node[TFHppleNodeAttributeArrayKey];
         for (NSDictionary * attributeDict in array)
         {
             id key = attributeDict[TFHppleNodeAttributeNameKey];
@@ -150,12 +150,12 @@ NSString * const TFHppleTextNodeName             = @"text";
 
 - (id) description
 {
-    return [node description];
+    return [_node description];
 }
 
 - (BOOL)hasChildren
 {
-    return node[TFHppleNodeChildrenKey] != nil;
+    return _node[TFHppleNodeChildrenKey] != nil;
 }
 
 - (BOOL)isTextNode
@@ -247,7 +247,7 @@ NSString * const TFHppleTextNodeName             = @"text";
 
 - (NSString *) text
 {
-    return [[self firstTextChild] content];
+    return _node[@"text"];
 }
 
 // Returns all elements at xPath.

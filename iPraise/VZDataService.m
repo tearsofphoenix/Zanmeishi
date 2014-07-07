@@ -9,6 +9,7 @@
 #import "VZDataService.h"
 #import "VZViewService.h"
 #import "VZFileCacheManager.h"
+#import "VZHeaders.h"
 
 @interface VZDataService ()
 
@@ -146,19 +147,52 @@
                             });
     
     NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
-    NSData *cahcedData = nil;// [[VZFileCacheManager manager] dataForKey: URLString];
-    if (cahcedData)
+    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
+    if (cachedData)
     {
         NSLog(@"using cache for url: %@", URLString);
         if (callback)
         {
-            callback([cahcedData plistObject], nil);
+            callback([cachedData plistObject], nil);
         }
     }else
     {
         
         [self _get: [VZURLManager searchURL]
         parameters: args
+          callback: (^(NSArray *result, NSError *error)
+                     {
+                         if (result && !error)
+                         {
+                             [self _parseSearchResult: result
+                                             callback: callback];
+                         }else
+                         {
+                             if (callback)
+                             {
+                                 callback(result, error);
+                             }
+                         }
+                     })];
+    }
+}
+
+- (void)fetchSong: (NSString *)songSubPath
+         callback: (VZCallback)callback
+{
+    NSString *URLString = [[VZURLManager baseURL] stringByAppendingString: songSubPath];
+    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
+    if (cachedData)
+    {
+        NSLog(@"using cache for url: %@", URLString);
+        if (callback)
+        {
+            callback([cachedData plistObject], nil);
+        }
+    }else
+    {
+        [self _get: URLString
+        parameters: nil
           callback: (^(NSArray *result, NSError *error)
                      {
                          if (result && !error)
@@ -196,7 +230,7 @@
                 NSMutableDictionary *infoLooper = [NSMutableDictionary dictionary];
                 
                 NSArray *children = [nLooper children];
-                NSDictionary *attr = [[children[0] firstChild] attributes];
+                NSDictionary *attr = [(TFHppleElement *)children[0][0] attributes];
                 
                 //                NSLog(@"%@ %@", attr[@"name"], attr[@"value"]);
                 
@@ -206,20 +240,20 @@
                 //children[1]; //index node
                 
                 {
-                    TFHppleElement *songNode = children[2];
+                    TFHppleElement *songNode = children[4];
                     NSArray *songChildren = [songNode children];
                     
-                    TFHppleElement *sNode = songChildren[0];
+                    TFHppleElement *sNode = songChildren[1];
                     NSString *songPath = [sNode attributes][@"href"];
-                    NSString *songName = [sNode content];
+                    NSString *songName = [sNode text];
                     
-                    TFHppleElement *artistNode = songChildren[2];
+                    TFHppleElement *artistNode = songChildren[3];
                     NSString *artistPath = [artistNode attributes][@"href"];
-                    NSString *artistName = [artistNode content];
+                    NSString *artistName = [artistNode text];
                     
-                    TFHppleElement *albumNode = songChildren[4];
+                    TFHppleElement *albumNode = songChildren[5];
                     NSString *albumPath = [albumNode attributes][@"href"];
-                    NSString *albumTitle = [albumNode content];
+                    NSString *albumTitle = [albumNode text];
                     
                     infoLooper[VZSongNameKey] = songName;
                     infoLooper[VZSongPathKey] = songPath;
@@ -233,8 +267,9 @@
                 
                 //fav node
                 {
-                    TFHppleElement *node = children[3];
-                    infoLooper[VZPopularityKey] = [[node firstChild] content];
+                    NSString *str = [children[6][0] text];
+                    str = [str substringFromIndex: 1];
+                    infoLooper[VZPopularityKey] = str;
                 }
                 
                 [result addObject: infoLooper];
@@ -249,6 +284,65 @@
     if (callback)
     {
         callback(result, nil);
+    }
+}
+
+- (void)_parseSongResult: (NSArray *)args
+                callback: (VZCallback)callback
+{
+    @autoreleasepool
+    {
+        NSString *originURL = args[0];
+        NSMutableArray *result = nil;
+        
+        TFHpple *parser = [[TFHpple alloc] initWithHTMLData: args[1]];
+
+        NSArray *nodes = [parser searchWithXPathQuery: @"//div[@class='main']"];
+        NSMutableDictionary *songDetailInfo = [NSMutableDictionary dictionary];
+        
+        if ([nodes count] > 0)
+        {
+            TFHppleElement *mainNode = nodes[0];
+            TFHppleElement *entityNode = nil;
+            {
+                entityNode = [mainNode firstChildWithClassName: @"entity"];
+                TFHppleElement *albumImageNode = entityNode[3][0];
+                songDetailInfo[@"album.image"] = albumImageNode[@"src"];
+                
+                TFHppleElement *extscountNode = entityNode[7][1];
+                NSString *favCount = [extscountNode[0][0] content];
+                NSString *showCount = [extscountNode[2][0] content];
+                
+                //TODO
+                //
+                //                NSString *commentCount = [extscountNode[2][0] content];
+                
+                songDetailInfo[@"fav.count"] = favCount;
+                songDetailInfo[@"show.count"] = showCount;
+                
+                //                NSLog(@"%@ %@ %@", favCount, showCount, commentCount);
+            }
+            
+            TFHppleElement *lyricsNode = [mainNode firstChildWithBlock: (^BOOL(TFHppleElement *element)
+                                                                         {
+                                                                             return [element[@"id"] isEqualToString: @"lyrics"];
+                                                                         })];
+            
+            {
+                TFHppleElement *node = lyricsNode[7][3][0];
+                NSString *lyrics = [node content];
+                songDetailInfo[@"lyrics"] = lyrics;
+            }
+            
+            //cache data
+            [[VZFileCacheManager manager] cacheData: [result plistData]
+                                             forKey: originURL];
+        }
+        
+        if (callback)
+        {
+            callback(result, nil);
+        }
     }
 }
 
