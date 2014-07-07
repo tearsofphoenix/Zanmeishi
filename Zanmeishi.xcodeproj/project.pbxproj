@@ -72,9 +72,7 @@
 		60D2664319670BDD00B8BD62 /* VZToStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D2662F19670BDD00B8BD62 /* VZToStart.png */; };
 		60D2664419670BDD00B8BD62 /* VZToStart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 60D2663019670BDD00B8BD62 /* VZToStart@2x.png */; };
 		60D26646196778CC00B8BD62 /* love.html in Resources */ = {isa = PBXBuildFile; fileRef = 60D26645196778CC00B8BD62 /* love.html */; };
-		60D2664D1967ACF600B8BD62 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D266481967ACF600B8BD62 /* TFHpple.m */; };
-		60D2664E1967ACF600B8BD62 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D2664A1967ACF600B8BD62 /* TFHppleElement.m */; };
-		60D2664F1967ACF600B8BD62 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D2664C1967ACF600B8BD62 /* XPathQuery.m */; };
+		60D26655196AFC6B00B8BD62 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D26654196AFC6B00B8BD62 /* GDataXMLNode.m */; };
 		925BD6921966696A00ED657B /* UIDevice+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 925BD6911966696A00ED657B /* UIDevice+Extensions.m */; };
 		927F8D8F19668D62007439F7 /* VZAudioPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F8D8E19668D62007439F7 /* VZAudioPlayerView.m */; };
 		927F8D921966934A007439F7 /* VZTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F8D911966934A007439F7 /* VZTheme.m */; };
@@ -218,12 +216,8 @@
 		60D2662F19670BDD00B8BD62 /* VZToStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VZToStart.png; sourceTree = "<group>"; };
 		60D2663019670BDD00B8BD62 /* VZToStart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VZToStart@2x.png"; sourceTree = "<group>"; };
 		60D26645196778CC00B8BD62 /* love.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = love.html; sourceTree = "<group>"; };
-		60D266471967ACF600B8BD62 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
-		60D266481967ACF600B8BD62 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
-		60D266491967ACF600B8BD62 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
-		60D2664A1967ACF600B8BD62 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
-		60D2664B1967ACF600B8BD62 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
-		60D2664C1967ACF600B8BD62 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		60D26653196AFC6B00B8BD62 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		60D26654196AFC6B00B8BD62 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		925BD6901966696A00ED657B /* UIDevice+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Extensions.h"; sourceTree = "<group>"; };
 		925BD6911966696A00ED657B /* UIDevice+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Extensions.m"; sourceTree = "<group>"; };
 		927F8D8D19668D62007439F7 /* VZAudioPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZAudioPlayerView.h; sourceTree = "<group>"; };
@@ -364,19 +358,15 @@
 			path = Loading;
 			sourceTree = "<group>";
 		};
-		929A58AB1965321E007F2327 /* HTML */ = {
+		60D26652196AFC6B00B8BD62 /* HTML */ = {
 			isa = PBXGroup;
 			children = (
-				60D266471967ACF600B8BD62 /* TFHpple.h */,
-				60D266481967ACF600B8BD62 /* TFHpple.m */,
-				60D266491967ACF600B8BD62 /* TFHppleElement.h */,
-				60D2664A1967ACF600B8BD62 /* TFHppleElement.m */,
-				60D2664B1967ACF600B8BD62 /* XPathQuery.h */,
-				60D2664C1967ACF600B8BD62 /* XPathQuery.m */,
+				60D26653196AFC6B00B8BD62 /* GDataXMLNode.h */,
+				60D26654196AFC6B00B8BD62 /* GDataXMLNode.m */,
 			);
 			name = HTML;
-			path = XML;
-			sourceTree = "<group>";
+			path = iPraise/Library/HTML;
+			sourceTree = SOURCE_ROOT;
 		};
 		929A58B5196536E0007F2327 /* Web */ = {
 			isa = PBXGroup;
@@ -557,7 +547,7 @@
 				60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */,
 				60D265A719661A6F00B8BD62 /* Categories */,
 				60D265B419661A6F00B8BD62 /* Loading */,
-				929A58AB1965321E007F2327 /* HTML */,
+				60D26652196AFC6B00B8BD62 /* HTML */,
 				92E752511964FDC000F831F3 /* AFNetworking */,
 			);
 			path = Library;
@@ -754,7 +744,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D2664E1967ACF600B8BD62 /* TFHppleElement.m in Sources */,
 				92E752391964FD8B00F831F3 /* VZBaseViewController.m in Sources */,
 				92E752011964FD0700F831F3 /* VZAppDelegate.m in Sources */,
 				92E752661964FDC000F831F3 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -776,7 +765,6 @@
 				92E751FD1964FD0700F831F3 /* main.m in Sources */,
 				60D2659D196612BC00B8BD62 /* VZFileCacheManager.m in Sources */,
 				92E752681964FDC000F831F3 /* AFNetworkReachabilityManager.m in Sources */,
-				60D2664F1967ACF600B8BD62 /* XPathQuery.m in Sources */,
 				60D265B819661A6F00B8BD62 /* NSDictionary+Extensions.m in Sources */,
 				60D265BD19661A6F00B8BD62 /* MBProgressHUD.m in Sources */,
 				60D265BC19661A6F00B8BD62 /* UIView+Extensions.m in Sources */,
@@ -785,9 +773,9 @@
 				92E7523D1964FD8B00F831F3 /* VZSearchViewController.m in Sources */,
 				92E752401964FD8B00F831F3 /* VZDataService.m in Sources */,
 				92E7523F1964FD8B00F831F3 /* VZURLManager.m in Sources */,
+				60D26655196AFC6B00B8BD62 /* GDataXMLNode.m in Sources */,
 				92E7526C1964FDC000F831F3 /* AFURLResponseSerialization.m in Sources */,
 				92E7523B1964FD8B00F831F3 /* VZPreferencesViewController.m in Sources */,
-				60D2664D1967ACF600B8BD62 /* TFHpple.m in Sources */,
 				927F8D921966934A007439F7 /* VZTheme.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
