@@ -51,8 +51,6 @@ NSDictionary *DictionaryForNode(xmlNodePtr currentNode, NSMutableDictionary *par
         {
             resultForNode[TFHppleNodeContentKey] = currentNodeContent;
         }
-        
-        
     }
     
     xmlAttr *attribute = currentNode->properties;
@@ -62,8 +60,7 @@ NSDictionary *DictionaryForNode(xmlNodePtr currentNode, NSMutableDictionary *par
         while (attribute)
         {
             NSMutableDictionary *attributeDictionary = [NSMutableDictionary dictionary];
-            NSString *attributeName =
-            @((const char *)attribute->name);
+            NSString *attributeName = @((const char *)attribute->name);
             if (attributeName)
             {
                 //                NSLog(@"Attribute Name Set: %@",attributeName);
@@ -197,9 +194,10 @@ NSArray *PerformHTMLXPathQueryWithEncoding(NSData *document, NSString *query,NSS
     const char *encoded = encoding ? [encoding cStringUsingEncoding: NSUTF8StringEncoding] : "utf-8";
     
     doc = htmlReadMemory([document bytes], (int)[document length], "", encoded,
-                         HTML_PARSE_NOWARNING
-                         | HTML_PARSE_NOERROR
-                         | HTML_PARSE_NOBLANKS);
+                         //HTML_PARSE_NOWARNING |
+//                         HTML_PARSE_NOERROR |
+                         HTML_PARSE_NONET |
+                         HTML_PARSE_NOBLANKS);
     
     if (doc == NULL)
     {

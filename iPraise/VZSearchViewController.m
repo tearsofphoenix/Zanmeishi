@@ -130,7 +130,7 @@ static NSArray *gsEntryNames = nil;
     [MBProgressHUD showHUDAddedTo: [self view]
                          animated: YES];
     
-    [[VZDataService manager] searchWithKeyword: [_searchBar text]
+    [[VZDataService service] searchWithKeyword: [_searchBar text]
                                           type: gsEntryValues[_selectedIndex]
                                       callback: (^(id result, NSError *error)
                                                  {

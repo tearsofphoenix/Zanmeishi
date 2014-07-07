@@ -19,7 +19,7 @@
 
 @implementation VZDataService
 
-+ (instancetype)manager
++ (instancetype)service
 {
     static id gsManager = nil;
     static dispatch_once_t onceToken;
@@ -49,7 +49,7 @@
                                        parameters: args
                                           success: (^(AFHTTPRequestOperation *operation, NSDictionary *result)
                                                     {
-                                                        NSLog(@"%@", result);
+//                                                        NSLog(@"%@", result);
                                                         
                                                         if ([result[VZMessageOKKey] integerValue] == 1)
                                                         {
@@ -98,7 +98,6 @@
 #if DEBUG
                                                    NSString *str = [[NSString alloc] initWithData: result
                                                                                          encoding: NSUTF8StringEncoding];
-                                                   
                                                    NSLog(@"%@",  str);
 #endif
                                                    
@@ -197,8 +196,8 @@
                      {
                          if (result && !error)
                          {
-                             [self _parseSearchResult: result
-                                             callback: callback];
+                             [self _parseSongResult: result
+                                           callback: callback];
                          }else
                          {
                              if (callback)
@@ -293,7 +292,6 @@
     @autoreleasepool
     {
         NSString *originURL = args[0];
-        NSMutableArray *result = nil;
         
         TFHpple *parser = [[TFHpple alloc] initWithHTMLData: args[1]];
 
@@ -312,13 +310,14 @@
                 TFHppleElement *extscountNode = entityNode[7][1];
                 NSString *favCount = [extscountNode[0][0] content];
                 NSString *showCount = [extscountNode[2][0] content];
-                
+                NSString *path = [entityNode[12] content];
                 //TODO
                 //
                 //                NSString *commentCount = [extscountNode[2][0] content];
                 
                 songDetailInfo[@"fav.count"] = favCount;
                 songDetailInfo[@"show.count"] = showCount;
+                songDetailInfo[@"path"] = path;
                 
                 //                NSLog(@"%@ %@ %@", favCount, showCount, commentCount);
             }
@@ -332,16 +331,17 @@
                 TFHppleElement *node = lyricsNode[7][3][0];
                 NSString *lyrics = [node content];
                 songDetailInfo[@"lyrics"] = lyrics;
+                songDetailInfo[@"lyrics-show"] = [lyricsNode[11] text];
             }
             
             //cache data
-            [[VZFileCacheManager manager] cacheData: [result plistData]
+            [[VZFileCacheManager manager] cacheData: [songDetailInfo plistData]
                                              forKey: originURL];
         }
         
         if (callback)
         {
-            callback(result, nil);
+            callback(songDetailInfo, nil);
         }
     }
 }

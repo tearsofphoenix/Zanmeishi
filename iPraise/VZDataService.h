@@ -11,7 +11,7 @@
 
 @interface VZDataService : NSObject
 
-+ (instancetype)manager;
++ (instancetype)service;
 
 @property (nonatomic, strong) NSDictionary *loginInfo;
 

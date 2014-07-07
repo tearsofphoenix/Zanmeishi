@@ -8,6 +8,7 @@
 
 #import "VZPlayerViewController.h"
 #import "VZHeaders.h"
+#import "VZDataService.h"
 #import "VZAudioPlayerView.h"
 
 @interface VZPlayerViewController ()
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UILabel *artistLabel;
 
 @property (nonatomic, strong) VZAudioPlayerView *playerView;
+@property (nonatomic, strong) NSDictionary *songDetailInfo;
 
 @end
 
@@ -71,6 +73,13 @@
 - (void)_updateUIForData
 {
     [_titleLabel setText: _songInfo[VZSongNameKey]];
+    [[VZDataService service] fetchSong: _songInfo[VZSongPathKey]
+                              callback: (^(id result, NSError *error)
+                                         {
+                                             //NSLog(@"%@", result);
+                                             [self setSongDetailInfo: result];
+                                             
+                                         })];
 }
 
 - (void)_handleBackEvent: (id)sender
