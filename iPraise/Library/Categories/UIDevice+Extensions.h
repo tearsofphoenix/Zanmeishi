@@ -10,7 +10,7 @@
 
 @interface UIDevice (Extensions)
 
-- (NSString *)platform;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *platform;
 
 + (BOOL)isiPhone5;
 

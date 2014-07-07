@@ -94,16 +94,18 @@
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
     [operation setCompletionBlockWithSuccess: (^(AFHTTPRequestOperation *operation, NSData *result)
                                                {
+#if DEBUG
                                                    NSString *str = [[NSString alloc] initWithData: result
                                                                                          encoding: NSUTF8StringEncoding];
                                                    
                                                    NSLog(@"%@",  str);
+#endif
                                                    
                                                    [_operationsOfGET removeObject: operation];
                                                    
                                                    if (callback)
                                                    {
-                                                       callback(@[URLString, str], nil);
+                                                       callback(@[URLString, result], nil);
                                                    }
                                                })
                                      failure: (^(AFHTTPRequestOperation *operation, NSError *error)
@@ -144,7 +146,7 @@
                             });
     
     NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
-    NSData *cahcedData = [[VZFileCacheManager manager] dataForKey: URLString];
+    NSData *cahcedData = nil;// [[VZFileCacheManager manager] dataForKey: URLString];
     if (cahcedData)
     {
         NSLog(@"using cache for url: %@", URLString);
@@ -180,15 +182,14 @@
     NSString *originURL = args[0];
     NSMutableArray *result = nil;
     
-    MXMLDocument *document = [[MXMLDocument alloc] initWithString: args[1]
-                                                      contentType: MXMLContentTypeHTML];
+    TFHpple *document = [[TFHpple alloc] initWithHTMLData: args[1]];
     
-    NSArray *nodes = [document nodesWithXPath: @"//div[@class='songs mt5']/table/tr"];
+    NSArray *nodes = [document searchWithXPathQuery: @"//div[@class='songs mt5']/table/tr"];
     if ([nodes count] > 0)
     {
         result = [NSMutableArray arrayWithCapacity: [nodes count]];
         
-        for (MXMLNode *nLooper in nodes)
+        for (TFHppleElement *nLooper in nodes)
         {
             @autoreleasepool
             {
@@ -205,20 +206,20 @@
                 //children[1]; //index node
                 
                 {
-                    MXMLNode *songNode = children[2];
+                    TFHppleElement *songNode = children[2];
                     NSArray *songChildren = [songNode children];
                     
-                    MXMLNode *sNode = songChildren[0];
+                    TFHppleElement *sNode = songChildren[0];
                     NSString *songPath = [sNode attributes][@"href"];
-                    NSString *songName = [sNode textContent];
+                    NSString *songName = [sNode content];
                     
-                    MXMLNode *artistNode = songChildren[2];
+                    TFHppleElement *artistNode = songChildren[2];
                     NSString *artistPath = [artistNode attributes][@"href"];
-                    NSString *artistName = [artistNode textContent];
+                    NSString *artistName = [artistNode content];
                     
-                    MXMLNode *albumNode = songChildren[4];
+                    TFHppleElement *albumNode = songChildren[4];
                     NSString *albumPath = [albumNode attributes][@"href"];
-                    NSString *albumTitle = [albumNode textContent];
+                    NSString *albumTitle = [albumNode content];
                     
                     infoLooper[VZSongNameKey] = songName;
                     infoLooper[VZSongPathKey] = songPath;
@@ -232,8 +233,8 @@
                 
                 //fav node
                 {
-                    MXMLNode *node = children[3];
-                    infoLooper[VZPopularityKey] = [[node firstChild] textContent];
+                    TFHppleElement *node = children[3];
+                    infoLooper[VZPopularityKey] = [[node firstChild] content];
                 }
                 
                 [result addObject: infoLooper];
