@@ -42,11 +42,16 @@
     [[self navigationController] setNavigationBarHidden: YES];
     [[UIApplication sharedApplication] setStatusBarStyle: UIStatusBarStyleLightContent];
     
-    [[self view] addGradientFrom: [VZTheme purpleStartColor]
-                              to: [VZTheme purpleEndColor]];
+//    [[self view] addGradientFrom: [VZTheme purpleStartColor]
+//                              to: [VZTheme purpleEndColor]];
     
     CGRect rect = [[self view] bounds];
 
+    UIToolbar *backgroundView = [[UIToolbar alloc] initWithFrame: rect];
+    [[self view] addSubview: backgroundView];
+    [backgroundView addGradientFrom: [VZTheme purpleStartColor]
+                                 to: [VZTheme purpleEndColor]];
+    
     _titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 20, rect.size.width, 44)];
     [_titleLabel setBackgroundColor: [UIColor clearColor]];
     [_titleLabel setTextAlignment: NSTextAlignmentCenter];
@@ -64,7 +69,12 @@
     
     [[self view] addSubview: backButton];
     
-    _playerView = [[VZAudioPlayerView alloc] initWithFrame: CGRectMake(0, 300, 320, 90)];
+    _imageView = [[UIImageView alloc] initWithFrame: CGRectMake(60, 80, 200, 200)];
+    [[_imageView layer] setCornerRadius: 100];
+    [_imageView setClipsToBounds: YES];
+    [[self view] addSubview: _imageView];
+    
+    _playerView = [[VZAudioPlayerView alloc] initWithFrame: CGRectMake(0, 420, 320, 90)];
     [[self view] addSubview: _playerView];
     
     [self _updateUIForData];
@@ -90,6 +100,8 @@
     if (_songDetailInfo != songDetailInfo)
     {
         _songDetailInfo = songDetailInfo;
+        NSString *ablumPath = _songDetailInfo[@"album.image"];
+        [_imageView setImageURLString: ablumPath];
         
         [_playerView setRemoteAudioURL: _songDetailInfo[@"path"]];
     }

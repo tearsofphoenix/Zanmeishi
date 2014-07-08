@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603951CD196C5C5400CF6705 /* UIImageView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 603951CC196C5C5400CF6705 /* UIImageView+Extensions.m */; };
 		60D265861965A45300B8BD62 /* libiOSHierarchyViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */; };
 		60D2658F1965AC7800B8BD62 /* libfppopover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2658C1965AC6B00B8BD62 /* libfppopover.a */; };
 		60D265941965B78300B8BD62 /* VZPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265931965B78300B8BD62 /* VZPlayerViewController.m */; };
@@ -143,6 +144,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		603951CB196C5C5400CF6705 /* UIImageView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extensions.h"; sourceTree = "<group>"; };
+		603951CC196C5C5400CF6705 /* UIImageView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extensions.m"; sourceTree = "<group>"; };
 		60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSHierarchyViewer.xcodeproj; path = "iOS-Hierarchy-Viewer/iOSHierarchyViewer.xcodeproj"; sourceTree = "<group>"; };
 		60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FPPopoverDemo.xcodeproj; path = Popover/FPPopoverDemo.xcodeproj; sourceTree = "<group>"; };
 		60D265921965B78300B8BD62 /* VZPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPlayerViewController.h; sourceTree = "<group>"; };
@@ -348,6 +351,8 @@
 				60D265B119661A6F00B8BD62 /* UIColor+Extensions.m */,
 				60D265B219661A6F00B8BD62 /* UIView+Extensions.h */,
 				60D265B319661A6F00B8BD62 /* UIView+Extensions.m */,
+				603951CB196C5C5400CF6705 /* UIImageView+Extensions.h */,
+				603951CC196C5C5400CF6705 /* UIImageView+Extensions.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -774,6 +779,7 @@
 				92E752651964FDC000F831F3 /* AFHTTPRequestOperation.m in Sources */,
 				925BD6921966696A00ED657B /* UIDevice+Extensions.m in Sources */,
 				92E7523C1964FD8B00F831F3 /* VZRootViewController.m in Sources */,
+				603951CD196C5C5400CF6705 /* UIImageView+Extensions.m in Sources */,
 				92E752691964FDC000F831F3 /* AFSecurityPolicy.m in Sources */,
 				92E752731964FDDB00F831F3 /* VZKeys.m in Sources */,
 				60D265BB19661A6F00B8BD62 /* UIColor+Extensions.m in Sources */,

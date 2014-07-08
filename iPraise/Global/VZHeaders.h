@@ -18,7 +18,7 @@
 #import "UIColor+Extensions.h"
 #import "UIView+Extensions.h"
 #import "UIDevice+Extensions.h"
-
+#import "UIImageView+Extensions.h"
 
 #pragma mark - html
 #import "GDataXMLNode.h"
