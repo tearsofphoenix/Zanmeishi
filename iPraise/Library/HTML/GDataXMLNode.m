@@ -1345,6 +1345,11 @@ static xmlChar *SplitQNameReverse(const xmlChar *qname, xmlChar **prefix) {
     return nil;
 }
 
+- (NSString *)attributeValueForName: (NSString *)name
+{
+    return [[self attributeForName: name] stringValue];
+}
+
 - (GDataXMLNode *)attributeForName:(NSString *)name {
     
     if (xmlNode_ != NULL) {

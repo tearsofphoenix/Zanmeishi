@@ -25,8 +25,27 @@ didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
     VZRootViewController *rootViewController = [[VZRootViewController alloc] init];
     [_window setRootViewController: rootViewController];
     
-//    [self testExample];
+    //    [self testExample];
+//    NSString *path = [[NSBundle mainBundle] pathForResource: @"love"
+//                                                     ofType: @"html"];
+//    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
+//    
+//    [[VZDataService service] _parseSongResult: @[path, data]
+//                                     callback: (^(id result, NSError *error)
+//                                                {
+//                                                    NSLog(@"%@", result);
+//                                                })];
     
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"search"
+                                                     ofType: @"html"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
+    
+    [[VZDataService service] _parseSearchResult: @[path, data]
+                                       callback: (^(id result, NSError *error)
+                                                  {
+                                                      NSLog(@"%@", result);
+                                                  })];
+
     return YES;
 }
 

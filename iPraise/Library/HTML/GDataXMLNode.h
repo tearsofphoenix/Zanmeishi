@@ -174,8 +174,8 @@ typedef NS_ENUM(NSUInteger, GDataXMLNodeKind) {
 
 @interface GDataXMLElement : GDataXMLNode
 
-- (instancetype)initWithXMLString:(NSString *)str error:(NSError **)error NS_DESIGNATED_INITIALIZER;
-- (instancetype)initWithHTMLString:(NSString *)str error:(NSError **)error NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithXMLString:(NSString *)str error:(NSError **)error ;
+- (instancetype)initWithHTMLString:(NSString *)str error:(NSError **)error ;
 
 @property (NS_NONATOMIC_IOSONLY, copy) NSArray *namespaces;
 - (void)addNamespace:(GDataXMLNode *)aNamespace;
@@ -188,6 +188,8 @@ typedef NS_ENUM(NSUInteger, GDataXMLNodeKind) {
 - (NSArray *)elementsForLocalName:(NSString *)localName URI:(NSString *)URI;
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *attributes;
+
+- (NSString *)attributeValueForName: (NSString *)name;
 - (GDataXMLNode *)attributeForName:(NSString *)name;
 - (GDataXMLNode *)attributeForLocalName:(NSString *)name URI:(NSString *)attributeURI;
 - (void)addAttribute:(GDataXMLNode *)attribute;
@@ -203,10 +205,10 @@ typedef NS_ENUM(NSUInteger, GDataXMLNodeKind) {
 }
 
 - (instancetype)initWithXMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError **)error;
-- (instancetype)initWithData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError **)error NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError **)error ;
 
 - (instancetype)initWithHTMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError **)error;
-- (instancetype)initWithHTMLData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError **)error NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithHTMLData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError **)error ;
 
 - (instancetype)initWithXMLString:(NSString *)str error:(NSError **)error;
 - (instancetype)initWithData:(NSData *)data error:(NSError **)error;
@@ -215,7 +217,7 @@ typedef NS_ENUM(NSUInteger, GDataXMLNodeKind) {
 - (instancetype)initWithHTMLData:(NSData *)data error:(NSError **)error;
 
 // initWithRootElement uses a copy of the argument as the new document's root
-- (instancetype)initWithRootElement:(GDataXMLElement *)element NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithRootElement:(GDataXMLElement *)element ;
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) GDataXMLElement *rootElement;
 

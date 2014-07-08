@@ -622,7 +622,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Mac003;
 			};
-			buildConfigurationList = 929CB675193EC4ED0016820F /* Build configuration list for PBXProject "Zanmeishi" */;
+			buildConfigurationList = 929CB675193EC4ED0016820F /* Build configuration list for PBXProject "iPraise" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -924,7 +924,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		929CB675193EC4ED0016820F /* Build configuration list for PBXProject "Zanmeishi" */ = {
+		929CB675193EC4ED0016820F /* Build configuration list for PBXProject "iPraise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				929CB6AD193EC4EF0016820F /* Debug */,

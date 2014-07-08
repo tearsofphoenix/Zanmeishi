@@ -45,6 +45,10 @@
    parameters: (NSDictionary *)args
      callback: (VZCallback)callback
 {
+#if DEBUG
+    NSLog(@"POST-URL: %@ args: %@", URLString, args);
+#endif
+
     [[AFHTTPRequestOperationManager manager] POST: URLString
                                        parameters: args
                                           success: (^(AFHTTPRequestOperation *operation, NSDictionary *result)
@@ -87,10 +91,14 @@
     {
         URLString = [URLString stringByAppendingFormat: @"?%@", [args queryURLString]];
     }
+#if DEBUG
+    NSLog(@"GET-URL: %@", URLString);
+#endif
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: URLString]];
     [request setValue: @"text/html"
    forHTTPHeaderField: @"Accept"];
+    [request setHTTPMethod: @"POST"];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest: request];
     [operation setCompletionBlockWithSuccess: (^(AFHTTPRequestOperation *operation, NSData *result)
@@ -146,7 +154,7 @@
                             });
     
     NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
-    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
+    NSData *cachedData = nil;//[[VZFileCacheManager manager] dataForKey: URLString];
     if (cachedData)
     {
         NSLog(@"using cache for url: %@", URLString);
@@ -215,44 +223,47 @@
     NSString *originURL = args[0];
     NSMutableArray *result = nil;
     
-    TFHpple *document = [[TFHpple alloc] initWithHTMLData: args[1]];
+    NSError *error = nil;
+    GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithHTMLData: args[1]
+                                                                      error: &error];
     
-    NSArray *nodes = [document searchWithXPathQuery: @"//div[@class='songs mt5']/table/tr"];
+    NSArray *nodes = [document nodesForXPath: @"//div[@class='songs mt5']/table/tr"
+                                       error: &error];
     if ([nodes count] > 0)
     {
         result = [NSMutableArray arrayWithCapacity: [nodes count]];
         
-        for (TFHppleElement *nLooper in nodes)
+        for (GDataXMLNode *nLooper in nodes)
         {
             @autoreleasepool
             {
                 NSMutableDictionary *infoLooper = [NSMutableDictionary dictionary];
                 
                 NSArray *children = [nLooper children];
-                NSDictionary *attr = [(TFHppleElement *)children[0][0] attributes];
+                GDataXMLElement *nameNode = children[1][0];
                 
                 //                NSLog(@"%@ %@", attr[@"name"], attr[@"value"]);
                 
-                infoLooper[VZNameKey] = attr[@"name"];
-                infoLooper[VZIDKey] = attr[@"value"];
+                infoLooper[VZNameKey] = [nameNode attributeValueForName: @"name"];
+                infoLooper[VZIDKey] = [nameNode attributeValueForName: @"value"];
                 
                 //children[1]; //index node
                 
                 {
-                    TFHppleElement *songNode = children[4];
+                    GDataXMLElement *songNode = children[5];
                     NSArray *songChildren = [songNode children];
                     
-                    TFHppleElement *sNode = songChildren[1];
-                    NSString *songPath = [sNode attributes][@"href"];
-                    NSString *songName = [sNode text];
+                    GDataXMLElement *sNode = songChildren[1];
+                    NSString *songPath = [sNode attributeValueForName: @"href"];
+                    NSString *songName = [sNode stringValue];
                     
-                    TFHppleElement *artistNode = songChildren[3];
-                    NSString *artistPath = [artistNode attributes][@"href"];
-                    NSString *artistName = [artistNode text];
+                    GDataXMLElement *artistNode = songChildren[3];
+                    NSString *artistPath = [artistNode attributeValueForName: @"href"];
+                    NSString *artistName = [artistNode stringValue];
                     
-                    TFHppleElement *albumNode = songChildren[5];
-                    NSString *albumPath = [albumNode attributes][@"href"];
-                    NSString *albumTitle = [albumNode text];
+                    GDataXMLElement *albumNode = songChildren[5];
+                    NSString *albumPath = [albumNode attributeValueForName: @"href"];
+                    NSString *albumTitle = [albumNode stringValue];
                     
                     infoLooper[VZSongNameKey] = songName;
                     infoLooper[VZSongPathKey] = songPath;
@@ -266,7 +277,7 @@
                 
                 //fav node
                 {
-                    NSString *str = [children[6][0] text];
+                    NSString *str = [children[7][0] stringValue];
                     str = [str substringFromIndex: 1];
                     infoLooper[VZPopularityKey] = str;
                 }
@@ -293,45 +304,54 @@
     {
         NSString *originURL = args[0];
         
-        TFHpple *parser = [[TFHpple alloc] initWithHTMLData: args[1]];
+        NSError *error = nil;
+        GDataXMLDocument *parser = [[GDataXMLDocument alloc] initWithHTMLData: args[1]
+                                                                        error: &error];
 
-        NSArray *nodes = [parser searchWithXPathQuery: @"//div[@class='main']"];
+        NSArray *nodes = [parser nodesForXPath: @"//div[@class='main']"
+                                         error: &error];
+        
         NSMutableDictionary *songDetailInfo = [NSMutableDictionary dictionary];
         
         if ([nodes count] > 0)
         {
-            TFHppleElement *mainNode = nodes[0];
-            TFHppleElement *entityNode = nil;
+            GDataXMLElement *mainNode = nodes[0];
+            GDataXMLElement *entityNode = nil;
             {
-                entityNode = [mainNode firstChildWithClassName: @"entity"];
-                TFHppleElement *albumImageNode = entityNode[3][0];
-                songDetailInfo[@"album.image"] = albumImageNode[@"src"];
+                entityNode = mainNode[1];
+                GDataXMLElement *albumImageNode = entityNode[3][0];
+                songDetailInfo[@"album.image"] = [albumImageNode attributeValueForName: @"src"];
                 
-                TFHppleElement *extscountNode = entityNode[7][1];
-                NSString *favCount = [extscountNode[0][0] content];
-                NSString *showCount = [extscountNode[2][0] content];
-                NSString *path = [entityNode[12] content];
+                GDataXMLElement *extscountNode = entityNode[7][1];
+                NSString *favCount = [extscountNode[1][0] stringValue];
+                NSString *showCount = [extscountNode[3][0] stringValue];
+                NSString *script = [entityNode[11] stringValue];
+                NSRange range = [script rangeOfString: @"http://.+mp3"
+                                              options: NSRegularExpressionSearch];
+                if (range.location != NSNotFound)
+                {
+                    NSString *path = [script substringWithRange: range];
+                    
+                    NSLog(@"%@", path);
+                    songDetailInfo[@"path"] = path;
+                }
                 //TODO
                 //
                 //                NSString *commentCount = [extscountNode[2][0] content];
                 
                 songDetailInfo[@"fav.count"] = favCount;
                 songDetailInfo[@"show.count"] = showCount;
-                songDetailInfo[@"path"] = path;
                 
                 //                NSLog(@"%@ %@ %@", favCount, showCount, commentCount);
             }
             
-            TFHppleElement *lyricsNode = [mainNode firstChildWithBlock: (^BOOL(TFHppleElement *element)
-                                                                         {
-                                                                             return [element[@"id"] isEqualToString: @"lyrics"];
-                                                                         })];
-            
+            GDataXMLElement *lyricsNode = mainNode[5];
+
             {
-                TFHppleElement *node = lyricsNode[7][3][0];
-                NSString *lyrics = [node content];
+                GDataXMLElement *node = lyricsNode[7][3][0];
+                NSString *lyrics = [node stringValue];
                 songDetailInfo[@"lyrics"] = lyrics;
-                songDetailInfo[@"lyrics-show"] = [lyricsNode[11] text];
+                songDetailInfo[@"lyrics-show"] = [lyricsNode[11] stringValue];
             }
             
             //cache data

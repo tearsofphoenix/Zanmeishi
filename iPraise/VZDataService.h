@@ -26,6 +26,12 @@
 - (void)fetchSong: (NSString *)songSubPath
          callback: (VZCallback)callback;
 
+- (void)_parseSearchResult: (NSArray *)args
+                  callback: (VZCallback)callback;
+
+- (void)_parseSongResult: (NSArray *)args
+                callback: (VZCallback)callback;
+
 @end
 
 extern NSString * const VZUserAvatarKey;
