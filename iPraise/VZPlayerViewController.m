@@ -73,13 +73,26 @@
 - (void)_updateUIForData
 {
     [_titleLabel setText: _songInfo[VZSongNameKey]];
+    
+    [[self view] showLoadingMessage: @"正在载入..."];
+    
     [[VZDataService service] fetchSong: _songInfo[VZSongPathKey]
                               callback: (^(id result, NSError *error)
                                          {
+                                             [[self view] dismissLoading];
                                              //NSLog(@"%@", result);
                                              [self setSongDetailInfo: result];
-                                             
                                          })];
+}
+
+- (void)setSongDetailInfo: (NSDictionary *)songDetailInfo
+{
+    if (_songDetailInfo != songDetailInfo)
+    {
+        _songDetailInfo = songDetailInfo;
+        
+        [_playerView setRemoteAudioURL: _songDetailInfo[@"path"]];
+    }
 }
 
 - (void)_handleBackEvent: (id)sender

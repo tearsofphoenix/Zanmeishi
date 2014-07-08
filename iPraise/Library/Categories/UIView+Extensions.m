@@ -7,6 +7,7 @@
 //
 
 #import "UIView+Extensions.h"
+#import "MBProgressHUD.h"
 #import <objc/runtime.h>
 
 static const char kUIViewGradientLayerKey;
@@ -28,6 +29,19 @@ static const char kUIViewGradientLayerKey;
     
     [[self layer] insertSublayer: gradient
                          atIndex: 0];
+}
+
+- (void)showLoadingMessage: (NSString *)message
+{
+    MBProgressHUD *hud = [MBProgressHUD HUDForView: self];
+    [hud setLabelText: message];
+    [hud show: YES];
+}
+
+- (void)dismissLoading
+{
+    [MBProgressHUD hideHUDForView: self
+                         animated: YES];
 }
 
 @end

@@ -104,9 +104,9 @@
     [operation setCompletionBlockWithSuccess: (^(AFHTTPRequestOperation *operation, NSData *result)
                                                {
 #if DEBUG
-                                                   NSString *str = [[NSString alloc] initWithData: result
-                                                                                         encoding: NSUTF8StringEncoding];
-                                                   NSLog(@"%@",  str);
+//                                                   NSString *str = [[NSString alloc] initWithData: result
+//                                                                                         encoding: NSUTF8StringEncoding];
+//                                                   NSLog(@"%@",  str);
 #endif
                                                    
                                                    [_operationsOfGET removeObject: operation];
@@ -154,7 +154,7 @@
                             });
     
     NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
-    NSData *cachedData = nil;//[[VZFileCacheManager manager] dataForKey: URLString];
+    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
     if (cachedData)
     {
         NSLog(@"using cache for url: %@", URLString);

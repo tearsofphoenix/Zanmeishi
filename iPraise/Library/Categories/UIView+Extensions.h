@@ -13,4 +13,8 @@
 - (void)addGradientFrom: (UIColor *)color1
                      to: (UIColor *)color2;
 
+- (void)showLoadingMessage: (NSString *)message;
+
+- (void)dismissLoading;
+
 @end

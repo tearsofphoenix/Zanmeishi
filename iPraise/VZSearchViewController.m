@@ -127,15 +127,13 @@ static NSArray *gsEntryNames = nil;
     [_searchBar resignFirstResponder];
     [_searchBar setShowsCancelButton: NO];
 
-    [MBProgressHUD showHUDAddedTo: [self view]
-                         animated: YES];
+    [[self view] showLoadingMessage: @"正在载入..."];
     
     [[VZDataService service] searchWithKeyword: [_searchBar text]
                                           type: gsEntryValues[_selectedIndex]
                                       callback: (^(id result, NSError *error)
                                                  {
-                                                     [MBProgressHUD hideHUDForView: [self view]
-                                                                          animated: YES];
+                                                     [[self view] dismissLoading];
                                                      
                                                      if (error)
                                                      {

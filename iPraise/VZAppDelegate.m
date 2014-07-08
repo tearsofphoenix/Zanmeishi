@@ -36,15 +36,15 @@ didFinishLaunchingWithOptions: (NSDictionary *)launchOptions
 //                                                    NSLog(@"%@", result);
 //                                                })];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource: @"search"
-                                                     ofType: @"html"];
-    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
-    
-    [[VZDataService service] _parseSearchResult: @[path, data]
-                                       callback: (^(id result, NSError *error)
-                                                  {
-                                                      NSLog(@"%@", result);
-                                                  })];
+//    NSString *path = [[NSBundle mainBundle] pathForResource: @"search"
+//                                                     ofType: @"html"];
+//    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
+//    
+//    [[VZDataService service] _parseSearchResult: @[path, data]
+//                                       callback: (^(id result, NSError *error)
+//                                                  {
+//                                                      NSLog(@"%@", result);
+//                                                  })];
 
     return YES;
 }

@@ -10,4 +10,6 @@
 
 @interface VZAudioPlayerView : UIView
 
+@property (nonatomic, strong) NSString *remoteAudioURL;
+
 @end
