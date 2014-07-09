@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		603951CD196C5C5400CF6705 /* UIImageView+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 603951CC196C5C5400CF6705 /* UIImageView+Extensions.m */; };
+		603951D0196CAFCF00CF6705 /* VZLyricView.m in Sources */ = {isa = PBXBuildFile; fileRef = 603951CF196CAFCF00CF6705 /* VZLyricView.m */; };
+		603951D4196CB74500CF6705 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 603951D3196CB74500CF6705 /* MarqueeLabel.m */; };
 		60D265861965A45300B8BD62 /* libiOSHierarchyViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D265831965A43500B8BD62 /* libiOSHierarchyViewer.a */; };
 		60D2658F1965AC7800B8BD62 /* libfppopover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D2658C1965AC6B00B8BD62 /* libfppopover.a */; };
 		60D265941965B78300B8BD62 /* VZPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D265931965B78300B8BD62 /* VZPlayerViewController.m */; };
@@ -146,6 +148,10 @@
 /* Begin PBXFileReference section */
 		603951CB196C5C5400CF6705 /* UIImageView+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extensions.h"; sourceTree = "<group>"; };
 		603951CC196C5C5400CF6705 /* UIImageView+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extensions.m"; sourceTree = "<group>"; };
+		603951CE196CAFCF00CF6705 /* VZLyricView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VZLyricView.h; path = ../VZLyricView.h; sourceTree = "<group>"; };
+		603951CF196CAFCF00CF6705 /* VZLyricView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VZLyricView.m; path = ../VZLyricView.m; sourceTree = "<group>"; };
+		603951D2196CB74500CF6705 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		603951D3196CB74500CF6705 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 		60D2657E1965A43500B8BD62 /* iOSHierarchyViewer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSHierarchyViewer.xcodeproj; path = "iOS-Hierarchy-Viewer/iOSHierarchyViewer.xcodeproj"; sourceTree = "<group>"; };
 		60D265871965AC6B00B8BD62 /* FPPopoverDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FPPopoverDemo.xcodeproj; path = Popover/FPPopoverDemo.xcodeproj; sourceTree = "<group>"; };
 		60D265921965B78300B8BD62 /* VZPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VZPlayerViewController.h; sourceTree = "<group>"; };
@@ -318,6 +324,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603951D1196CB74500CF6705 /* ScrollLabel */ = {
+			isa = PBXGroup;
+			children = (
+				603951D2196CB74500CF6705 /* MarqueeLabel.h */,
+				603951D3196CB74500CF6705 /* MarqueeLabel.m */,
+			);
+			name = ScrollLabel;
+			path = iPraise/Library/ScrollLabel;
+			sourceTree = SOURCE_ROOT;
+		};
 		60D2657F1965A43500B8BD62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +583,7 @@
 				60D265B419661A6F00B8BD62 /* Loading */,
 				60D26652196AFC6B00B8BD62 /* HTML */,
 				60DBBD25196C55DE004F8114 /* Glow */,
+				603951D1196CB74500CF6705 /* ScrollLabel */,
 				92E752511964FDC000F831F3 /* AFNetworking */,
 			);
 			path = Library;
@@ -605,6 +622,8 @@
 				92E752701964FDDB00F831F3 /* VZHeaders.h */,
 				92E752711964FDDB00F831F3 /* VZKeys.h */,
 				92E752721964FDDB00F831F3 /* VZKeys.m */,
+				603951CE196CAFCF00CF6705 /* VZLyricView.h */,
+				603951CF196CAFCF00CF6705 /* VZLyricView.m */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -777,6 +796,7 @@
 				60DBBD28196C55DE004F8114 /* RRSGlowLabel.m in Sources */,
 				92E752671964FDC000F831F3 /* AFHTTPSessionManager.m in Sources */,
 				92E752651964FDC000F831F3 /* AFHTTPRequestOperation.m in Sources */,
+				603951D4196CB74500CF6705 /* MarqueeLabel.m in Sources */,
 				925BD6921966696A00ED657B /* UIDevice+Extensions.m in Sources */,
 				92E7523C1964FD8B00F831F3 /* VZRootViewController.m in Sources */,
 				603951CD196C5C5400CF6705 /* UIImageView+Extensions.m in Sources */,
@@ -789,6 +809,7 @@
 				60D265B819661A6F00B8BD62 /* NSDictionary+Extensions.m in Sources */,
 				60D265BD19661A6F00B8BD62 /* MBProgressHUD.m in Sources */,
 				60D265BC19661A6F00B8BD62 /* UIView+Extensions.m in Sources */,
+				603951D0196CAFCF00CF6705 /* VZLyricView.m in Sources */,
 				92E7526D1964FDC000F831F3 /* AFURLSessionManager.m in Sources */,
 				60D265B719661A6F00B8BD62 /* NSData+Extensions.m in Sources */,
 				92E7523D1964FD8B00F831F3 /* VZSearchViewController.m in Sources */,

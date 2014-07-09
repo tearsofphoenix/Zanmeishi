@@ -34,7 +34,10 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
 @property (nonatomic, strong) UIButton *nextButton;
 @property (nonatomic, strong) UIButton *loopStateButton;
 
-@property (nonatomic, strong) id timeObserver;
+@property (nonatomic, strong) id periodicTimeObserver;
+@property (nonatomic) NSInteger boundaryIndex;
+@property (nonatomic, strong) id boundaryTimeObserver;
+
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic) Float64 duration;
 @property (nonatomic) Float64 elapseTime;
@@ -55,26 +58,29 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
         _elapseTime = 0;
         _duration = 0;
         
-        _elapseTimeLabel = [[UILabel alloc] initWithFrame: CGRectMake(5, 0, 50, 16)];
+        _elapseTimeLabel = [[UILabel alloc] initWithFrame: CGRectMake(5, 8, 50, 16)];
         [_elapseTimeLabel setBackgroundColor: [UIColor clearColor]];
         [_elapseTimeLabel setFont: [VZTheme smallNumberFont]];
         [_elapseTimeLabel setTextAlignment: NSTextAlignmentCenter];
-        [_elapseTimeLabel setTextColor: [VZTheme textColor]];
-        [_elapseTimeLabel setText: @"0:0"];
+        [_elapseTimeLabel setTextColor: [UIColor whiteColor]];
+        [_elapseTimeLabel setText: @"00:00"];
         
         [self addSubview: _elapseTimeLabel];
         
-        _totalTimeLabel = [[UILabel alloc] initWithFrame: CGRectMake(frame.size.width - 55, 0, 50, 16)];
+        _totalTimeLabel = [[UILabel alloc] initWithFrame: CGRectMake(frame.size.width - 55, 8, 50, 16)];
         [_totalTimeLabel setBackgroundColor: [UIColor clearColor]];
         [_totalTimeLabel setFont: [VZTheme smallNumberFont]];
         [_totalTimeLabel setTextAlignment: NSTextAlignmentCenter];
-        [_totalTimeLabel setTextColor: [VZTheme textColor]];
+        [_totalTimeLabel setTextColor: [UIColor whiteColor]];
         
         [self addSubview: _totalTimeLabel];
         
-        _progressSlider = [[UISlider alloc] initWithFrame: CGRectMake(0, 12, frame.size.width, 31)];
-//        [_progressSlider setMinimumValue: 0];
-//        [_progressSlider setMaximumValue: 1];
+        _progressSlider = [[UISlider alloc] initWithFrame: CGRectMake(53, 0, frame.size.width - 105, 31)];
+        [_progressSlider setThumbImage: [[UIImage alloc] init]
+                              forState: UIControlStateNormal];
+        [_progressSlider setMinimumTrackTintColor: [UIColor colorWithRed:0.94 green:0.19 blue:0.3 alpha:1]];
+        [_progressSlider setMaximumTrackTintColor: [UIColor whiteColor]];
+        
         [self addSubview: _progressSlider];
         
         _previousButton = [[UIButton alloc] initWithFrame: CGRectMake(85, 54, 30, 30)];
@@ -123,7 +129,9 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
     {
         _remoteAudioURL = remoteAudioURL;
         
-        [_player removeTimeObserver: _timeObserver];
+        [_player removeTimeObserver: _periodicTimeObserver];
+        [_player removeTimeObserver: _boundaryTimeObserver];
+        
         _player = nil;
         
         AVPlayerItem *item = [[AVPlayerItem alloc] initWithURL: [NSURL URLWithString: remoteAudioURL]];
@@ -138,13 +146,21 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
         CMTimeShow(time);
 
         __block VZAudioPlayerView *dummySelf = self;
-        _timeObserver = [_player addPeriodicTimeObserverForInterval: time
+        _periodicTimeObserver = [_player addPeriodicTimeObserverForInterval: time
                                                               queue: dispatch_get_main_queue()
                                                          usingBlock: (^(CMTime time)
                                                                       {
                                                                           double sec = CMTimeGetSeconds(time);
                                                                           [dummySelf setElapseTime: sec];
                                                                       })];
+        
+//        _boundaryTimeObserver = [_player addBoundaryTimeObserverForTimes: @[]
+//                                                                   queue: dispatch_get_main_queue()
+//                                                              usingBlock: (^
+//                                                                           {
+//                                                                               
+//                                                                               ++dummySelf->_boundaryIndex;
+//                                                                           })];
         _isPlaying = NO;
     }
 }

@@ -29,5 +29,6 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD.h"
 #import "RRSGlowLabel.h"
+#import "MarqueeLabel.h"
 
 

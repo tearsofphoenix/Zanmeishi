@@ -12,4 +12,6 @@
 
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *MD5;
 
+- (NSArray *)lyricBoundaryTimes;
+
 @end

@@ -266,7 +266,7 @@
                     NSString *albumTitle = [albumNode stringValue];
                     
                     infoLooper[VZSongNameKey] = songName;
-                    infoLooper[VZSongPathKey] = songPath;
+                    infoLooper[VZSongInfoPathKey] = songPath;
                     infoLooper[VZArtistPathKey] = artistPath;
                     infoLooper[VZArtistNameKey] = artistName;
                     infoLooper[VZAlbumPathKey] = albumPath;
@@ -320,7 +320,7 @@
             {
                 entityNode = mainNode[1];
                 GDataXMLElement *albumImageNode = entityNode[3][0];
-                songDetailInfo[@"album.image"] = [albumImageNode attributeValueForName: @"src"];
+                songDetailInfo[VZAlbumImagePathKey] = [albumImageNode attributeValueForName: @"src"];
                 
                 GDataXMLElement *extscountNode = entityNode[7][1];
                 NSString *favCount = [extscountNode[1][0] stringValue];
@@ -333,14 +333,14 @@
                     NSString *path = [script substringWithRange: range];
                     
                     NSLog(@"%@", path);
-                    songDetailInfo[@"path"] = path;
+                    songDetailInfo[VZSongFilePathKey] = path;
                 }
                 //TODO
                 //
                 //                NSString *commentCount = [extscountNode[2][0] content];
                 
-                songDetailInfo[@"fav.count"] = favCount;
-                songDetailInfo[@"show.count"] = showCount;
+                songDetailInfo[VZSongFavoriteCountKey] = favCount;
+                songDetailInfo[VZSongShowCountKey] = showCount;
                 
                 //                NSLog(@"%@ %@ %@", favCount, showCount, commentCount);
             }
@@ -350,8 +350,8 @@
             {
                 GDataXMLElement *node = lyricsNode[7][3][0];
                 NSString *lyrics = [node stringValue];
-                songDetailInfo[@"lyrics"] = lyrics;
-                songDetailInfo[@"lyrics-show"] = [lyricsNode[11] stringValue];
+                songDetailInfo[VZSongLyricsKey] = lyrics;
+                songDetailInfo[VZSongLyricsShowKey] = [lyricsNode[11] stringValue];
             }
             
             //cache data

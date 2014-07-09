@@ -10,6 +10,7 @@
 #import "VZHeaders.h"
 #import "VZDataService.h"
 #import "VZAudioPlayerView.h"
+#import "VZLyricView.h"
 
 @interface VZPlayerViewController ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *albumLabel;
 @property (nonatomic, strong) UILabel *artistLabel;
+@property (nonatomic, strong) VZLyricView *lyricView;
 
 @property (nonatomic, strong) VZAudioPlayerView *playerView;
 @property (nonatomic, strong) NSDictionary *songDetailInfo;
@@ -49,8 +51,8 @@
 
     UIToolbar *backgroundView = [[UIToolbar alloc] initWithFrame: rect];
     [[self view] addSubview: backgroundView];
-    [backgroundView addGradientFrom: [VZTheme purpleStartColor]
-                                 to: [VZTheme purpleEndColor]];
+    [backgroundView addGradientFrom: [VZTheme purpleEndColor]
+                                 to: [VZTheme purpleStartColor]];
     
     _titleLabel = [[UILabel alloc] initWithFrame: CGRectMake(0, 20, rect.size.width, 44)];
     [_titleLabel setBackgroundColor: [UIColor clearColor]];
@@ -74,6 +76,16 @@
     [_imageView setClipsToBounds: YES];
     [[self view] addSubview: _imageView];
     
+    _lyricView = [[VZLyricView alloc] initWithFrame: CGRectMake(0, 300, 320, 100)];
+    [_lyricView setTextColor: [UIColor colorWithWhite: 0.9
+                                                alpha: 1]];
+//    [_lyricView setFadeLength: 10.0f];
+//    [_lyricView setNumberOfLines: 2];
+//    [_lyricView setShadowOffset: CGSizeMake(0.0, -1.0)];
+    [_lyricView setBackgroundColor: [UIColor clearColor]];
+
+    [[self view] addSubview: _lyricView];
+    
     _playerView = [[VZAudioPlayerView alloc] initWithFrame: CGRectMake(0, 420, 320, 90)];
     [[self view] addSubview: _playerView];
     
@@ -86,7 +98,7 @@
     
     [[self view] showLoadingMessage: @"正在载入..."];
     
-    [[VZDataService service] fetchSong: _songInfo[VZSongPathKey]
+    [[VZDataService service] fetchSong: _songInfo[VZSongInfoPathKey]
                               callback: (^(id result, NSError *error)
                                          {
                                              [[self view] dismissLoading];
@@ -100,10 +112,13 @@
     if (_songDetailInfo != songDetailInfo)
     {
         _songDetailInfo = songDetailInfo;
-        NSString *ablumPath = _songDetailInfo[@"album.image"];
+        
+        NSString *ablumPath = _songDetailInfo[VZAlbumImagePathKey];
         [_imageView setImageURLString: ablumPath];
         
-        [_playerView setRemoteAudioURL: _songDetailInfo[@"path"]];
+        [_lyricView setText: _songDetailInfo[VZSongLyricsKey]];
+        
+        [_playerView setRemoteAudioURL: _songDetailInfo[VZSongFilePathKey]];
     }
 }
 
