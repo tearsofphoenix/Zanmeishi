@@ -56,7 +56,7 @@ static NSArray *gsEntryNames = nil;
     [[self navigationItem] setRightBarButtonItem: rightItem];
     
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: [self title]
-                                                       image: [UIImage imageNamed: @"VZTabSearch"]
+                                                       image: [UIImage imageNamed: @"VZSearch"]
                                                selectedImage: nil];
     [self setTabBarItem: item];
     

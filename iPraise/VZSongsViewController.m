@@ -30,7 +30,7 @@
     [self setTitle: @"歌曲"];
     
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: [self title]
-                                                       image: [UIImage imageNamed: @"VZTabSongs"]
+                                                       image: [UIImage imageNamed: @"VZMusic"]
                                                selectedImage: nil];
     [self setTabBarItem: item];
 }

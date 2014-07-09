@@ -154,10 +154,24 @@
                             });
     
     NSString *URLString = [[VZURLManager searchURL] stringByAppendingFormat: @"?%@", [args queryURLString]];
-    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
-    if (cachedData)
+
+#ifdef DEBUG_CMB
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"search"
+                                                     ofType: @"html"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
+    
+    [self _parseSearchResult: @[path, data]
+                    callback: callback];
+    return;
+#endif
+
+    if (![[AFNetworkReachabilityManager sharedManager] isReachable])
     {
         NSLog(@"using cache for url: %@", URLString);
+
+        NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
+
         if (callback)
         {
             callback([cachedData plistObject], nil);
@@ -188,10 +202,23 @@
          callback: (VZCallback)callback
 {
     NSString *URLString = [[VZURLManager baseURL] stringByAppendingString: songSubPath];
-    NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
-    if (cachedData)
+
+#ifdef DEBUG_CMB
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource: @"love"
+                                                     ofType: @"html"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile: path];
+    
+    [self _parseSearchResult: @[path, data]
+                    callback: callback];
+#endif
+
+    if (![[AFNetworkReachabilityManager sharedManager] isReachable])
     {
         NSLog(@"using cache for url: %@", URLString);
+        
+        NSData *cachedData = [[VZFileCacheManager manager] dataForKey: URLString];
+        
         if (callback)
         {
             callback([cachedData plistObject], nil);

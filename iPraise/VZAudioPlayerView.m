@@ -84,7 +84,7 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
         [self addSubview: _progressSlider];
         
         _previousButton = [[UIButton alloc] initWithFrame: CGRectMake(85, 54, 30, 30)];
-        [_previousButton setImage: [UIImage imageNamed: @"VZToStart"]
+        [_previousButton setImage: [UIImage imageNamed: @"VZFastBack"]
                          forState: UIControlStateNormal];
         [_previousButton setShowsTouchWhenHighlighted: YES];
         [_previousButton addTarget: self
@@ -102,7 +102,7 @@ static void _GetMinutesAndSeconds(NSInteger duration, NSInteger *minutes, NSInte
         [self addSubview: _playButton];
         
         _nextButton = [[UIButton alloc] initWithFrame: CGRectMake(200, 54, 30, 30)];
-        [_nextButton setImage: [UIImage imageNamed: @"VZToEnd"]
+        [_nextButton setImage: [UIImage imageNamed: @"VZFastForward"]
                      forState: UIControlStateNormal];
         [_nextButton setShowsTouchWhenHighlighted: YES];
         [_nextButton addTarget: self

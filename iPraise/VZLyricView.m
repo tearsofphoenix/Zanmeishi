@@ -7,6 +7,7 @@
 //
 
 #import "VZLyricView.h"
+#import "VZTheme.h"
 
 @interface VZLyricView ()
 
@@ -34,9 +35,8 @@
         
         [self addSubview: _textView];
         
-        UIColor* baseColor = [UIColor colorWithWhite: 0.4
-                                               alpha: 1];
-        UIColor *fadeColor = [baseColor colorWithAlphaComponent: 0.1];
+        UIColor* baseColor = [[VZTheme purpleStartColor] colorWithAlphaComponent: 0.5];
+        UIColor *fadeColor = [[VZTheme purpleEndColor] colorWithAlphaComponent: 0.8];
         
         CAGradientLayer *gradientLayer = [CAGradientLayer layer];
         [gradientLayer setColors: @[ (id)[fadeColor CGColor], (id)[baseColor CGColor]]];

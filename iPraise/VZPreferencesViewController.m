@@ -21,7 +21,7 @@
     [[self view] setBackgroundColor: [UIColor whiteColor]];
     
     UITabBarItem *item = [[UITabBarItem alloc] initWithTitle: @"我"
-                                                       image: [UIImage imageNamed: @"VZTabMe"]
+                                                       image: [UIImage imageNamed: @"VZAccount"]
                                                selectedImage: nil];
     [self setTabBarItem: item];
     [self setTitle: @"我"];
